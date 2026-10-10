@@ -1,0 +1,9 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Suppress tooltips created internally by native XAML controls. -->
+    <Style TargetType="ToolTip">
+        <Setter Property="IsEnabled" Value="False"/>
+        <Setter Property="Visibility" Value="Collapsed"/>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,2370 @@
+{
+  "sourceLanguage": "zh-CN",
+  "languages": [
+    "zh-CN",
+    "en-US"
+  ],
+  "entries": [
+    {
+      "id": "T001",
+      "zh-CN": "已应用",
+      "en-US": "Applied"
+    },
+    {
+      "id": "T002",
+      "zh-CN": "已恢复",
+      "en-US": "Restored"
+    },
+    {
+      "id": "T003",
+      "zh-CN": "应用中",
+      "en-US": "Applying..."
+    },
+    {
+      "id": "T004",
+      "zh-CN": "未应用",
+      "en-US": "Not applied"
+    },
+    {
+      "id": "T005",
+      "zh-CN": "有线模式",
+      "en-US": "Wired mode"
+    },
+    {
+      "id": "T006",
+      "zh-CN": "未连接",
+      "en-US": "Disconnected"
+    },
+    {
+      "id": "T007",
+      "zh-CN": "读取中",
+      "en-US": "Reading..."
+    },
+    {
+      "id": "T008",
+      "zh-CN": "无线模式",
+      "en-US": "Wireless mode"
+    },
+    {
+      "id": "T009",
+      "zh-CN": "等待电量上报",
+      "en-US": "Waiting for battery report"
+    },
+    {
+      "id": "T010",
+      "zh-CN": "第 {stage} 档 {axis} DPI",
+      "en-US": "Stage {stage} {axis} DPI"
+    },
+    {
+      "id": "T011",
+      "zh-CN": "第 {stage} 档颜色",
+      "en-US": "Stage {stage} color"
+    },
+    {
+      "id": "T012",
+      "zh-CN": "通用",
+      "en-US": "General"
+    },
+    {
+      "id": "T013",
+      "zh-CN": "电池",
+      "en-US": "Battery"
+    },
+    {
+      "id": "T014",
+      "zh-CN": "关于",
+      "en-US": "About"
+    },
+    {
+      "id": "T015",
+      "zh-CN": "按键",
+      "en-US": "Buttons"
+    },
+    {
+      "id": "T016",
+      "zh-CN": "保存调试模式设置失败，错误代码：{errorCode}",
+      "en-US": "Failed to save debug mode setting. Error code: {errorCode}"
+    },
+    {
+      "id": "T017",
+      "zh-CN": "鼠标管理器",
+      "en-US": "Mouse Manager"
+    },
+    {
+      "id": "T018",
+      "zh-CN": "托盘监控切换失败，错误码：{errorCode}",
+      "en-US": "Failed to toggle tray monitoring. Error code: {errorCode}"
+    },
+    {
+      "id": "T019",
+      "zh-CN": "请输入 100–12000 范围内的 DPI 整数。",
+      "en-US": "Please enter an integer DPI between 100 and 12000."
+    },
+    {
+      "id": "T020",
+      "zh-CN": "{minutes} 分钟",
+      "en-US": "{minutes} min"
+    },
+    {
+      "id": "T021",
+      "zh-CN": "第 {stage} 档",
+      "en-US": "Stage {stage}"
+    },
+    {
+      "id": "T022",
+      "zh-CN": "- 已编辑",
+      "en-US": "- Edited"
+    },
+    {
+      "id": "T023",
+      "zh-CN": "设置提交失败，编辑已保留。",
+      "en-US": "Failed to apply settings. Changes have been kept."
+    },
+    {
+      "id": "T024",
+      "zh-CN": "设置参数读取失败",
+      "en-US": "Failed to read device settings"
+    },
+    {
+      "id": "T025",
+      "zh-CN": "鼠标已连接，但设置参数读取失败。\n请关闭再打开鼠标开关以强制鼠标重新上报。",
+      "en-US": "Mouse is connected, but failed to read device settings.\nPlease toggle the mouse power switch off and on to force a status report."
+    },
+    {
+      "id": "T026",
+      "zh-CN": "关闭",
+      "en-US": "Close"
+    },
+    {
+      "id": "T027",
+      "zh-CN": "设置参数读取失败，按 F5 重试。（{details}）",
+      "en-US": "Failed to read device settings. Press F5 to retry. ({details})"
+    },
+    {
+      "id": "T028",
+      "zh-CN": "未应用的修改",
+      "en-US": "Unapplied changes"
+    },
+    {
+      "id": "T029",
+      "zh-CN": "关闭窗口并放弃这些修改？",
+      "en-US": "Close window and discard these changes?"
+    },
+    {
+      "id": "T030",
+      "zh-CN": "继续编辑",
+      "en-US": "Keep editing"
+    },
+    {
+      "id": "T031",
+      "zh-CN": "行为",
+      "en-US": "Behavior"
+    },
+    {
+      "id": "T032",
+      "zh-CN": "休眠设置",
+      "en-US": "Sleep timer"
+    },
+    {
+      "id": "T033",
+      "zh-CN": "按键消抖",
+      "en-US": "Debounce time"
+    },
+    {
+      "id": "T034",
+      "zh-CN": "直线修正",
+      "en-US": "Angle snapping"
+    },
+    {
+      "id": "T035",
+      "zh-CN": "波纹控制",
+      "en-US": "Ripple control"
+    },
+    {
+      "id": "T036",
+      "zh-CN": "灵敏度",
+      "en-US": "Sensitivity"
+    },
+    {
+      "id": "T037",
+      "zh-CN": "回报率",
+      "en-US": "Polling rate"
+    },
+    {
+      "id": "T038",
+      "zh-CN": "DPI 档位数量",
+      "en-US": "DPI stage count"
+    },
+    {
+      "id": "T039",
+      "zh-CN": "{count} 档",
+      "en-US": "Stages: {count}"
+    },
+    {
+      "id": "T040",
+      "zh-CN": "鼠标电量",
+      "en-US": "Mouse battery"
+    },
+    {
+      "id": "T041",
+      "zh-CN": "按键映射报文的长度、头部或校验错误。",
+      "en-US": "Button mapping packet length, header, or checksum error."
+    },
+    {
+      "id": "T042",
+      "zh-CN": "宏 {index}",
+      "en-US": "Macro {index}"
+    },
+    {
+      "id": "T043",
+      "zh-CN": "未知功能（{code}）",
+      "en-US": "Unknown function ({code})"
+    },
+    {
+      "id": "T044",
+      "zh-CN": "按键映射读取失败，按 F5 重试。",
+      "en-US": "Failed to read button mappings. Press F5 to retry."
+    },
+    {
+      "id": "T045",
+      "zh-CN": "未读取",
+      "en-US": "Not loaded"
+    },
+    {
+      "id": "T046",
+      "zh-CN": "读取失败",
+      "en-US": "Failed to read"
+    },
+    {
+      "id": "T047",
+      "zh-CN": "无",
+      "en-US": "None"
+    },
+    {
+      "id": "T048",
+      "zh-CN": "确认重置",
+      "en-US": "Confirm reset"
+    },
+    {
+      "id": "T049",
+      "zh-CN": "按下 Space 以确认。",
+      "en-US": "Press Space to confirm."
+    },
+    {
+      "id": "T050",
+      "zh-CN": "无法获取重置确认焦点。",
+      "en-US": "Unable to focus reset confirmation."
+    },
+    {
+      "id": "T051",
+      "zh-CN": "无法显示重置确认：{details}",
+      "en-US": "Unable to display reset confirmation: {details}"
+    },
+    {
+      "id": "T052",
+      "zh-CN": "映射重置提交失败，默认映射保留为待应用状态。",
+      "en-US": "Failed to submit mapping reset. Default mappings remain pending."
+    },
+    {
+      "id": "T053",
+      "zh-CN": "在本页面时按下 Ctrl + Shift + Alt + R 以重置映射",
+      "en-US": "Press Ctrl + Shift + Alt + R on this page to reset mappings"
+    },
+    {
+      "id": "T054",
+      "zh-CN": "宏",
+      "en-US": "Macros"
+    },
+    {
+      "id": "T055",
+      "zh-CN": "无配置",
+      "en-US": "No profiles"
+    },
+    {
+      "id": "T056",
+      "zh-CN": "选中一个配置以编辑",
+      "en-US": "Select a profile to edit"
+    },
+    {
+      "id": "T057",
+      "zh-CN": "指定次数",
+      "en-US": "Fixed repeat count"
+    },
+    {
+      "id": "T058",
+      "zh-CN": "按住重复",
+      "en-US": "Repeat while held"
+    },
+    {
+      "id": "T059",
+      "zh-CN": "持续重复",
+      "en-US": "Continuous repeat"
+    },
+    {
+      "id": "T060",
+      "zh-CN": "指定次数：按指定次数重复执行宏。\n按住重复：在按住触发键期间重复执行宏。\n持续重复：按下触发键后将持续重复执行宏，直到按下鼠标其他键打断时停止。",
+      "en-US": "Fixed repeat count: Repeats the macro a specified number of times.\nRepeat while held: Repeats the macro while the trigger button is held down.\nContinuous repeat: Press the trigger button to repeat the macro continuously until another mouse button is pressed."
+    },
+    {
+      "id": "T061",
+      "zh-CN": "实验性",
+      "en-US": "Experimental"
+    },
+    {
+      "id": "T062",
+      "zh-CN": "宏执行时钟补偿",
+      "en-US": "Macro clock compensation"
+    },
+    {
+      "id": "T063",
+      "zh-CN": "测量",
+      "en-US": "Calibrate"
+    },
+    {
+      "id": "T064",
+      "zh-CN": "开启后，程序会在将宏配置发送到鼠标时应用时间补偿，以减少鼠标执行宏时的延时表现与预期不符的情况。",
+      "en-US": "When enabled, timing compensation is applied when sending macros to the mouse to reduce execution delay discrepancies."
+    },
+    {
+      "id": "T065",
+      "zh-CN": "鼠标",
+      "en-US": "Mouse"
+    },
+    {
+      "id": "T066",
+      "zh-CN": "键盘",
+      "en-US": "Keyboard"
+    },
+    {
+      "id": "T067",
+      "zh-CN": "组合键",
+      "en-US": "Combinations"
+    },
+    {
+      "id": "T068",
+      "zh-CN": "功能键",
+      "en-US": "Function Keys"
+    },
+    {
+      "id": "T069",
+      "zh-CN": "其他",
+      "en-US": "Other"
+    },
+    {
+      "id": "T070",
+      "zh-CN": "字母",
+      "en-US": "Letters"
+    },
+    {
+      "id": "T071",
+      "zh-CN": "数字",
+      "en-US": "Numbers"
+    },
+    {
+      "id": "T072",
+      "zh-CN": "小键盘按键",
+      "en-US": "Numpad"
+    },
+    {
+      "id": "T073",
+      "zh-CN": "FN 键",
+      "en-US": "FN Keys"
+    },
+    {
+      "id": "T074",
+      "zh-CN": "符号",
+      "en-US": "Symbols"
+    },
+    {
+      "id": "T075",
+      "zh-CN": "左键",
+      "en-US": "Left Click"
+    },
+    {
+      "id": "T076",
+      "zh-CN": "右键",
+      "en-US": "Right Click"
+    },
+    {
+      "id": "T077",
+      "zh-CN": "中键",
+      "en-US": "Middle Click"
+    },
+    {
+      "id": "T078",
+      "zh-CN": "前侧键",
+      "en-US": "Forward Side Button"
+    },
+    {
+      "id": "T079",
+      "zh-CN": "后侧键",
+      "en-US": "Back Side Button"
+    },
+    {
+      "id": "T080",
+      "zh-CN": "中心功能键",
+      "en-US": "Center Function Button"
+    },
+    {
+      "id": "T081",
+      "zh-CN": "Ctrl + 左 Windows + 小键盘 Enter",
+      "en-US": "Ctrl + Left Windows + Num Enter"
+    },
+    {
+      "id": "T082",
+      "zh-CN": "左 Windows + Tab",
+      "en-US": "Left Windows + Tab"
+    },
+    {
+      "id": "T083",
+      "zh-CN": "左 Windows + D",
+      "en-US": "Left Windows + D"
+    },
+    {
+      "id": "T084",
+      "zh-CN": "左 Windows + T",
+      "en-US": "Left Windows + T"
+    },
+    {
+      "id": "T085",
+      "zh-CN": "左 Windows + A",
+      "en-US": "Left Windows + A"
+    },
+    {
+      "id": "T086",
+      "zh-CN": "左 Windows + E",
+      "en-US": "Left Windows + E"
+    },
+    {
+      "id": "T087",
+      "zh-CN": "左 Windows + I",
+      "en-US": "Left Windows + I"
+    },
+    {
+      "id": "T088",
+      "zh-CN": "左 Windows + L",
+      "en-US": "Left Windows + L"
+    },
+    {
+      "id": "T089",
+      "zh-CN": "左 Windows + K",
+      "en-US": "Left Windows + K"
+    },
+    {
+      "id": "T090",
+      "zh-CN": "左 Windows + B",
+      "en-US": "Left Windows + B"
+    },
+    {
+      "id": "T091",
+      "zh-CN": "左 Windows + G",
+      "en-US": "Left Windows + G"
+    },
+    {
+      "id": "T092",
+      "zh-CN": "左 Windows + R",
+      "en-US": "Left Windows + R"
+    },
+    {
+      "id": "T093",
+      "zh-CN": "左 Windows + S",
+      "en-US": "Left Windows + S"
+    },
+    {
+      "id": "T094",
+      "zh-CN": "左 Windows + U",
+      "en-US": "Left Windows + U"
+    },
+    {
+      "id": "T095",
+      "zh-CN": "左 Windows + X",
+      "en-US": "Left Windows + X"
+    },
+    {
+      "id": "T096",
+      "zh-CN": "左 Windows + .",
+      "en-US": "Left Windows + ."
+    },
+    {
+      "id": "T097",
+      "zh-CN": "左 Windows + =",
+      "en-US": "Left Windows + ="
+    },
+    {
+      "id": "T098",
+      "zh-CN": "禁用",
+      "en-US": "Disabled"
+    },
+    {
+      "id": "T099",
+      "zh-CN": "狙击键",
+      "en-US": "Sniper Key"
+    },
+    {
+      "id": "T100",
+      "zh-CN": "左摆",
+      "en-US": "Tilt Left"
+    },
+    {
+      "id": "T101",
+      "zh-CN": "右摆",
+      "en-US": "Tilt Right"
+    },
+    {
+      "id": "T102",
+      "zh-CN": "小键盘 -",
+      "en-US": "Num -"
+    },
+    {
+      "id": "T103",
+      "zh-CN": "小键盘 *",
+      "en-US": "Num *"
+    },
+    {
+      "id": "T104",
+      "zh-CN": "小键盘 /",
+      "en-US": "Num /"
+    },
+    {
+      "id": "T105",
+      "zh-CN": "小键盘 +",
+      "en-US": "Num +"
+    },
+    {
+      "id": "T106",
+      "zh-CN": "小键盘 0",
+      "en-US": "Num 0"
+    },
+    {
+      "id": "T107",
+      "zh-CN": "小键盘 1",
+      "en-US": "Num 1"
+    },
+    {
+      "id": "T108",
+      "zh-CN": "小键盘 2",
+      "en-US": "Num 2"
+    },
+    {
+      "id": "T109",
+      "zh-CN": "小键盘 3",
+      "en-US": "Num 3"
+    },
+    {
+      "id": "T110",
+      "zh-CN": "小键盘 4",
+      "en-US": "Num 4"
+    },
+    {
+      "id": "T111",
+      "zh-CN": "小键盘 5",
+      "en-US": "Num 5"
+    },
+    {
+      "id": "T112",
+      "zh-CN": "小键盘 6",
+      "en-US": "Num 6"
+    },
+    {
+      "id": "T113",
+      "zh-CN": "小键盘 7",
+      "en-US": "Num 7"
+    },
+    {
+      "id": "T114",
+      "zh-CN": "小键盘 8",
+      "en-US": "Num 8"
+    },
+    {
+      "id": "T115",
+      "zh-CN": "小键盘 9",
+      "en-US": "Num 9"
+    },
+    {
+      "id": "T116",
+      "zh-CN": "小键盘 Del",
+      "en-US": "Num Del"
+    },
+    {
+      "id": "T117",
+      "zh-CN": "小键盘 Enter",
+      "en-US": "Num Enter"
+    },
+    {
+      "id": "T118",
+      "zh-CN": "小键盘 Lock",
+      "en-US": "Num Lock"
+    },
+    {
+      "id": "T119",
+      "zh-CN": "左 Windows",
+      "en-US": "Left Windows"
+    },
+    {
+      "id": "T120",
+      "zh-CN": "右 Windows",
+      "en-US": "Right Windows"
+    },
+    {
+      "id": "T121",
+      "zh-CN": "左 Alt",
+      "en-US": "Left Alt"
+    },
+    {
+      "id": "T122",
+      "zh-CN": "右 Alt",
+      "en-US": "Right Alt"
+    },
+    {
+      "id": "T123",
+      "zh-CN": "左 Ctrl",
+      "en-US": "Left Ctrl"
+    },
+    {
+      "id": "T124",
+      "zh-CN": "右 Ctrl",
+      "en-US": "Right Ctrl"
+    },
+    {
+      "id": "T125",
+      "zh-CN": "左 Shift",
+      "en-US": "Left Shift"
+    },
+    {
+      "id": "T126",
+      "zh-CN": "右 Shift",
+      "en-US": "Right Shift"
+    },
+    {
+      "id": "T127",
+      "zh-CN": "前进",
+      "en-US": "Forward"
+    },
+    {
+      "id": "T128",
+      "zh-CN": "后退",
+      "en-US": "Back"
+    },
+    {
+      "id": "T129",
+      "zh-CN": "滚轮上",
+      "en-US": "Scroll Up"
+    },
+    {
+      "id": "T130",
+      "zh-CN": "滚轮下",
+      "en-US": "Scroll Down"
+    },
+    {
+      "id": "T131",
+      "zh-CN": "DPI 切换",
+      "en-US": "DPI Cycle"
+    },
+    {
+      "id": "T132",
+      "zh-CN": "Dpi 切换",
+      "en-US": "Dpi Cycle"
+    },
+    {
+      "id": "T133",
+      "zh-CN": "剪切",
+      "en-US": "Cut"
+    },
+    {
+      "id": "T134",
+      "zh-CN": "复制",
+      "en-US": "Copy"
+    },
+    {
+      "id": "T135",
+      "zh-CN": "粘贴",
+      "en-US": "Paste"
+    },
+    {
+      "id": "T136",
+      "zh-CN": "撤消",
+      "en-US": "Undo"
+    },
+    {
+      "id": "T137",
+      "zh-CN": "播放/暂停",
+      "en-US": "Play / Pause"
+    },
+    {
+      "id": "T138",
+      "zh-CN": "静音",
+      "en-US": "Mute"
+    },
+    {
+      "id": "T139",
+      "zh-CN": "停止播放",
+      "en-US": "Stop"
+    },
+    {
+      "id": "T140",
+      "zh-CN": "上一曲",
+      "en-US": "Previous Track"
+    },
+    {
+      "id": "T141",
+      "zh-CN": "下一曲",
+      "en-US": "Next Track"
+    },
+    {
+      "id": "T142",
+      "zh-CN": "音量 +",
+      "en-US": "Volume +"
+    },
+    {
+      "id": "T143",
+      "zh-CN": "音量 -",
+      "en-US": "Volume -"
+    },
+    {
+      "id": "T144",
+      "zh-CN": "浏览器",
+      "en-US": "Browser"
+    },
+    {
+      "id": "T145",
+      "zh-CN": "计算器",
+      "en-US": "Calculator"
+    },
+    {
+      "id": "T146",
+      "zh-CN": "邮件",
+      "en-US": "Mail"
+    },
+    {
+      "id": "T147",
+      "zh-CN": "我的电脑",
+      "en-US": "This PC"
+    },
+    {
+      "id": "T148",
+      "zh-CN": "收藏夹",
+      "en-US": "Favorites"
+    },
+    {
+      "id": "T149",
+      "zh-CN": "关闭窗口",
+      "en-US": "Close Window"
+    },
+    {
+      "id": "T150",
+      "zh-CN": "锁定计算机",
+      "en-US": "Lock PC"
+    },
+    {
+      "id": "T151",
+      "zh-CN": "放大",
+      "en-US": "Zoom In"
+    },
+    {
+      "id": "T152",
+      "zh-CN": "缩小",
+      "en-US": "Zoom Out"
+    },
+    {
+      "id": "T153",
+      "zh-CN": "显示桌面",
+      "en-US": "Show Desktop"
+    },
+    {
+      "id": "T154",
+      "zh-CN": "任务管理器",
+      "en-US": "Task Manager"
+    },
+    {
+      "id": "T155",
+      "zh-CN": "保存",
+      "en-US": "Save"
+    },
+    {
+      "id": "T156",
+      "zh-CN": "屏幕亮度 +",
+      "en-US": "Brightness +"
+    },
+    {
+      "id": "T157",
+      "zh-CN": "屏幕亮度 -",
+      "en-US": "Brightness -"
+    },
+    {
+      "id": "T158",
+      "zh-CN": "新配置",
+      "en-US": "New Profile"
+    },
+    {
+      "id": "T159",
+      "zh-CN": "请选择执行方式，执行次数须为 1–255。",
+      "en-US": "Please select a playback mode; repeat count must be 1–255."
+    },
+    {
+      "id": "T160",
+      "zh-CN": "单段等待时间须为 1–1048575 ms，连续时间项目合计也须在此范围内。",
+      "en-US": "Single delay must be 1–1048575 ms, and the total of consecutive delays must also remain within this range."
+    },
+    {
+      "id": "T161",
+      "zh-CN": "两个操作之间缺少时间，请正确编辑后保存。",
+      "en-US": "Missing delay between two actions. Please edit and save."
+    },
+    {
+      "id": "T162",
+      "zh-CN": "配置包含不支持的操作。",
+      "en-US": "Profile contains unsupported actions."
+    },
+    {
+      "id": "T163",
+      "zh-CN": "时间项目不能放在结尾。",
+      "en-US": "A delay cannot be placed at the end."
+    },
+    {
+      "id": "T164",
+      "zh-CN": "鼠标宏不支持首操作前的延迟，请移除开头的时间项目。",
+      "en-US": "Mouse macros do not support a leading delay before the first action. Please remove the delay at the start."
+    },
+    {
+      "id": "T165",
+      "zh-CN": "宏结束等待时间无效。",
+      "en-US": "Invalid macro end delay."
+    },
+    {
+      "id": "T166",
+      "zh-CN": "配置没有操作，请添加操作并保存后选择。",
+      "en-US": "Profile has no actions. Please add actions and save before selecting."
+    },
+    {
+      "id": "T167",
+      "zh-CN": "配置名称须为 1–255 个 UTF-8 字节。",
+      "en-US": "Profile name must be 1–255 UTF-8 bytes."
+    },
+    {
+      "id": "T168",
+      "zh-CN": "此宏超过鼠标可用的 4096 字节容量。",
+      "en-US": "This macro exceeds the mouse's 4096-byte memory capacity."
+    },
+    {
+      "id": "T169",
+      "zh-CN": "设备宏目录格式无效，保留原数据。",
+      "en-US": "Invalid device macro directory format; original data retained."
+    },
+    {
+      "id": "T170",
+      "zh-CN": "待应用宏配置无效。",
+      "en-US": "Pending macro configuration is invalid."
+    },
+    {
+      "id": "T171",
+      "zh-CN": "鼠标宏目录最多包含 256 项。",
+      "en-US": "The mouse macro directory can hold at most 256 items."
+    },
+    {
+      "id": "T172",
+      "zh-CN": "绑定后的宏数据超过鼠标可用的 4096 字节容量。",
+      "en-US": "Bound macro data exceeds the mouse's 4096-byte memory capacity."
+    },
+    {
+      "id": "T173",
+      "zh-CN": "宏名称须为有效文件名，且不超过 255 个 UTF-8 字节。",
+      "en-US": "Macro name must be a valid filename and no more than 255 UTF-8 bytes."
+    },
+    {
+      "id": "T174",
+      "zh-CN": "宏保存时间格式无效。",
+      "en-US": "Invalid macro save timestamp format."
+    },
+    {
+      "id": "T175",
+      "zh-CN": "宏文件须包含一个宏配置。",
+      "en-US": "Macro file must contain one macro configuration."
+    },
+    {
+      "id": "T176",
+      "zh-CN": "宏执行方式、次数或数据长度无效。",
+      "en-US": "Invalid macro playback mode, repeat count, or data length."
+    },
+    {
+      "id": "T177",
+      "zh-CN": "宏数据长度不匹配。",
+      "en-US": "Macro data length mismatch."
+    },
+    {
+      "id": "T178",
+      "zh-CN": "宏事件编码无效。",
+      "en-US": "Invalid macro event encoding."
+    },
+    {
+      "id": "T179",
+      "zh-CN": "宏名称与事件数据不匹配。",
+      "en-US": "Macro name does not match event data."
+    },
+    {
+      "id": "T180",
+      "zh-CN": "普通键事件无效。",
+      "en-US": "Invalid standard key event."
+    },
+    {
+      "id": "T181",
+      "zh-CN": "修饰键事件无效。",
+      "en-US": "Invalid modifier key event."
+    },
+    {
+      "id": "T182",
+      "zh-CN": "宏包含不支持的事件类型。",
+      "en-US": "Macro contains unsupported event types."
+    },
+    {
+      "id": "T183",
+      "zh-CN": "宏配置文件写入失败。",
+      "en-US": "Failed to write macro configuration file."
+    },
+    {
+      "id": "T184",
+      "zh-CN": "已存在同名宏配置。",
+      "en-US": "A macro profile with this name already exists."
+    },
+    {
+      "id": "T185",
+      "zh-CN": "宏文件大小无效。",
+      "en-US": "Invalid macro file size."
+    },
+    {
+      "id": "T186",
+      "zh-CN": "宏文件读取失败。",
+      "en-US": "Failed to read macro file."
+    },
+    {
+      "id": "T187",
+      "zh-CN": "无法读取 {filename}",
+      "en-US": "Unable to read {filename}"
+    },
+    {
+      "id": "T188",
+      "zh-CN": "键 {keyCode}",
+      "en-US": "Key {keyCode}"
+    },
+    {
+      "id": "T189",
+      "zh-CN": "宏配置读取失败：{details}",
+      "en-US": "Failed to read macro profile: {details}"
+    },
+    {
+      "id": "T190",
+      "zh-CN": "宏配置目录读取失败，请检查程序目录的访问权限。",
+      "en-US": "Failed to read macro directory. Please check access permissions for the app folder."
+    },
+    {
+      "id": "T191",
+      "zh-CN": "宏配置读取任务启动失败。",
+      "en-US": "Failed to start macro loading task."
+    },
+    {
+      "id": "T192",
+      "zh-CN": "时间须为 1–1048575 ms 的整数。",
+      "en-US": "Delay must be an integer between 1 and 1048575 ms."
+    },
+    {
+      "id": "T193",
+      "zh-CN": "执行次数须为 1–255 的整数。",
+      "en-US": "Repeat count must be an integer between 1 and 255."
+    },
+    {
+      "id": "T194",
+      "zh-CN": "宏配置保存失败，请检查程序目录的访问权限。编辑已保留。",
+      "en-US": "Failed to save macro profile. Please check access permissions for the app folder. Changes have been kept."
+    },
+    {
+      "id": "T195",
+      "zh-CN": "未保存的配置",
+      "en-US": "Unsaved Profile"
+    },
+    {
+      "id": "T196",
+      "zh-CN": "保存当前宏配置的编辑？",
+      "en-US": "Save changes to the current macro profile?"
+    },
+    {
+      "id": "T197",
+      "zh-CN": "放弃",
+      "en-US": "Discard"
+    },
+    {
+      "id": "T198",
+      "zh-CN": "取消",
+      "en-US": "Cancel"
+    },
+    {
+      "id": "T199",
+      "zh-CN": "删除配置",
+      "en-US": "Delete Profile"
+    },
+    {
+      "id": "T200",
+      "zh-CN": "删除“{name}”？鼠标已应用的映射保持原值。",
+      "en-US": "Delete \"{name}\"? Existing mappings applied to the mouse will remain unchanged."
+    },
+    {
+      "id": "T201",
+      "zh-CN": "删除",
+      "en-US": "Delete"
+    },
+    {
+      "id": "T202",
+      "zh-CN": "{name} - 副本",
+      "en-US": "{name} - Copy"
+    },
+    {
+      "id": "T203",
+      "zh-CN": "副本名称超过 255 个 UTF-8 字节，请先缩短名称。",
+      "en-US": "Copy name exceeds 255 UTF-8 bytes. Please shorten the name first."
+    },
+    {
+      "id": "T204",
+      "zh-CN": "配置管理操作失败，请检查配置文件及程序目录的访问权限。",
+      "en-US": "Profile management failed. Please check access permissions for the config file and app folder."
+    },
+    {
+      "id": "T205",
+      "zh-CN": "配置名称须为有效文件名，且不超过 255 个 UTF-8 字节。",
+      "en-US": "Profile name must be a valid filename and no more than 255 UTF-8 bytes."
+    },
+    {
+      "id": "T206",
+      "zh-CN": "配置重命名失败，原名称已保留。",
+      "en-US": "Failed to rename profile. Original name has been kept."
+    },
+    {
+      "id": "T207",
+      "zh-CN": "操作",
+      "en-US": "Action"
+    },
+    {
+      "id": "T208",
+      "zh-CN": "鼠标按键",
+      "en-US": "Mouse Button"
+    },
+    {
+      "id": "T209",
+      "zh-CN": "键盘按键",
+      "en-US": "Keyboard Key"
+    },
+    {
+      "id": "T210",
+      "zh-CN": "FN键",
+      "en-US": "FN Key"
+    },
+    {
+      "id": "T211",
+      "zh-CN": "时间",
+      "en-US": "Delay"
+    },
+    {
+      "id": "T212",
+      "zh-CN": "原始事件日志启动失败，录制仍可进行。",
+      "en-US": "Failed to start raw event logging. Recording can still proceed."
+    },
+    {
+      "id": "T213",
+      "zh-CN": "录制启动失败，无法读取键盘或鼠标输入。",
+      "en-US": "Failed to start recording. Unable to capture keyboard or mouse input."
+    },
+    {
+      "id": "T214",
+      "zh-CN": "原始事件日志写入失败，录制内容已保留。",
+      "en-US": "Failed to write raw event log. Recording has been kept."
+    },
+    {
+      "id": "T215",
+      "zh-CN": "录制处理失败，已保留录制内容。",
+      "en-US": "Failed to process recording. Recording has been kept."
+    },
+    {
+      "id": "T216",
+      "zh-CN": "绑定宏的时间数据未读回，请重新读取鼠标后应用。",
+      "en-US": "Timing data for bound macros not read back. Please reload mouse settings and apply again."
+    },
+    {
+      "id": "T217",
+      "zh-CN": "无法显示测量弹窗：{details}",
+      "en-US": "Unable to display calibration dialog: {details}"
+    },
+    {
+      "id": "T218",
+      "zh-CN": "时钟测量",
+      "en-US": "Clock Calibration"
+    },
+    {
+      "id": "T219",
+      "zh-CN": "逐步完成鼠标时钟测量，并自动计算补偿倍率。\n校准时，鼠标中心功能键会被临时替换成校准操作。\n完成测量流程大约需要 1 分钟。",
+      "en-US": "Calibrate the mouse clock step by step and calculate the compensation factor automatically.\nDuring calibration, the mouse center function button will be temporarily reassigned to the calibration action.\nThe calibration process takes about 1 minute."
+    },
+    {
+      "id": "T220",
+      "zh-CN": "下一步",
+      "en-US": "Next"
+    },
+    {
+      "id": "T221",
+      "zh-CN": "正在准备测量操作。",
+      "en-US": "Preparing calibration action..."
+    },
+    {
+      "id": "T222",
+      "zh-CN": "准备出错",
+      "en-US": "Preparation error"
+    },
+    {
+      "id": "T223",
+      "zh-CN": "应用测量宏失败，请重新连接鼠标后重试。",
+      "en-US": "Failed to apply calibration macro. Please reconnect the mouse and try again."
+    },
+    {
+      "id": "T224",
+      "zh-CN": "重试",
+      "en-US": "Retry"
+    },
+    {
+      "id": "T225",
+      "zh-CN": "开始测量",
+      "en-US": "Start Calibration"
+    },
+    {
+      "id": "T226",
+      "zh-CN": "请将指针移动到下方框内保持不动，然后单击中心功能键。在测量期间请不要输入任何操作。",
+      "en-US": "Move the pointer into the box below and keep it still, then click the center function button. Do not perform any input during measurement."
+    },
+    {
+      "id": "T227",
+      "zh-CN": "测量失败",
+      "en-US": "Calibration failed"
+    },
+    {
+      "id": "T228",
+      "zh-CN": "未能完成全部测量事件监听。",
+      "en-US": "Failed to capture all calibration events."
+    },
+    {
+      "id": "T229",
+      "zh-CN": "测量期间请不要将指针移到框外。",
+      "en-US": "Do not move the pointer outside the box during calibration."
+    },
+    {
+      "id": "T230",
+      "zh-CN": "测量期间得到意外的输入，请等待占用结束后点击重试。",
+      "en-US": "Unexpected input detected during calibration. Please wait until the device is available, then click Retry."
+    },
+    {
+      "id": "T231",
+      "zh-CN": "取消测量",
+      "en-US": "Cancel Calibration"
+    },
+    {
+      "id": "T232",
+      "zh-CN": "测量完成",
+      "en-US": "Calibration complete"
+    },
+    {
+      "id": "T233",
+      "zh-CN": "正在还原中心功能键映射，请保持鼠标唤醒。",
+      "en-US": "Restoring center function button mapping. Please keep the mouse awake."
+    },
+    {
+      "id": "T234",
+      "zh-CN": "还原出错",
+      "en-US": "Restoration error"
+    },
+    {
+      "id": "T235",
+      "zh-CN": "还原中心功能键映射失败，请重新连接鼠标后重试。",
+      "en-US": "Failed to restore center function button mapping. Please reconnect the mouse and try again."
+    },
+    {
+      "id": "T236",
+      "zh-CN": "取消测量并回退准备过程。",
+      "en-US": "Cancel calibration and revert preparation."
+    },
+    {
+      "id": "T237",
+      "zh-CN": "上一步",
+      "en-US": "Back"
+    },
+    {
+      "id": "T238",
+      "zh-CN": "确认",
+      "en-US": "Confirm"
+    },
+    {
+      "id": "T239",
+      "zh-CN": "在此查看你的用量情况。",
+      "en-US": "View your usage statistics here."
+    },
+    {
+      "id": "T240",
+      "zh-CN": "用量记录读取失败",
+      "en-US": "Failed to read usage history"
+    },
+    {
+      "id": "T241",
+      "zh-CN": "截至当前，今天的用量比平均用量少。",
+      "en-US": "So far today, usage is below average."
+    },
+    {
+      "id": "T242",
+      "zh-CN": "截至当前，今天的用量比平均用量多。",
+      "en-US": "So far today, usage is above average."
+    },
+    {
+      "id": "T243",
+      "zh-CN": "截至当前，今天的用量与平均用量基本持平。",
+      "en-US": "So far today, usage is about average."
+    },
+    {
+      "id": "T244",
+      "zh-CN": "平均",
+      "en-US": "Average"
+    },
+    {
+      "id": "T245",
+      "zh-CN": "开机自启设置失败，请检查启动目录的访问权限。",
+      "en-US": "Failed to set launch on startup. Please check access permissions for the startup folder."
+    },
+    {
+      "id": "T246",
+      "zh-CN": "低电量通知设置保存失败，请检查配置文件的访问权限。",
+      "en-US": "Failed to save low battery notification setting. Please check access permissions for the config file."
+    },
+    {
+      "id": "T247",
+      "zh-CN": "通知提交失败，请检查托盘电量监控是否正常运行。",
+      "en-US": "Failed to send notification. Please check if tray battery monitor is running."
+    },
+    {
+      "id": "T248",
+      "zh-CN": "读取于 {time}",
+      "en-US": "Read at {time}"
+    },
+    {
+      "id": "T249",
+      "zh-CN": "鼠标未连接",
+      "en-US": "Mouse disconnected"
+    },
+    {
+      "id": "T250",
+      "zh-CN": "正在充电",
+      "en-US": "Charging"
+    },
+    {
+      "id": "T251",
+      "zh-CN": "鼠标已上线，等待电量上报",
+      "en-US": "Mouse connected, waiting for battery report"
+    },
+    {
+      "id": "T252",
+      "zh-CN": "正在读取",
+      "en-US": "Reading..."
+    },
+    {
+      "id": "T253",
+      "zh-CN": "\n缓存电量读取于 {dateTime}",
+      "en-US": "\nCached battery level read at {dateTime}"
+    },
+    {
+      "id": "T254",
+      "zh-CN": "电量监控",
+      "en-US": "Battery monitoring"
+    },
+    {
+      "id": "T255",
+      "zh-CN": "开机自启",
+      "en-US": "Launch on startup"
+    },
+    {
+      "id": "T256",
+      "zh-CN": "低电量通知",
+      "en-US": "Low battery notifications"
+    },
+    {
+      "id": "T257",
+      "zh-CN": "测试通知推送",
+      "en-US": "Test notification"
+    },
+    {
+      "id": "T258",
+      "zh-CN": "测试",
+      "en-US": "Test"
+    },
+    {
+      "id": "T259",
+      "zh-CN": "用量",
+      "en-US": "Usage"
+    },
+    {
+      "id": "T260",
+      "zh-CN": "今天",
+      "en-US": "Today"
+    },
+    {
+      "id": "T261",
+      "zh-CN": "测试通知",
+      "en-US": "Test Notification"
+    },
+    {
+      "id": "T262",
+      "zh-CN": "鼠标电量很低",
+      "en-US": "Mouse battery critically low"
+    },
+    {
+      "id": "T263",
+      "zh-CN": "鼠标电量低",
+      "en-US": "Mouse battery low"
+    },
+    {
+      "id": "T264",
+      "zh-CN": "鼠标电量提醒通知正常。",
+      "en-US": "Mouse battery notifications are working properly."
+    },
+    {
+      "id": "T265",
+      "zh-CN": "鼠标相对电量 {percent}%，已持续低于提醒阈值。请连接充电。",
+      "en-US": "Relative mouse battery level is {percent}% and has remained below the notification threshold. Please connect the mouse to charge."
+    },
+    {
+      "id": "T266",
+      "zh-CN": "管理器使用中",
+      "en-US": "Manager in use"
+    },
+    {
+      "id": "T267",
+      "zh-CN": "设备监听恢复失败，请退出并重新启动电量提醒程序。",
+      "en-US": "Failed to resume device monitoring. Please exit and restart the battery reminder."
+    },
+    {
+      "id": "T268",
+      "zh-CN": "无法完成设备交接，请关闭管理器后重试。",
+      "en-US": "Unable to complete device handoff. Please close Manager and try again."
+    },
+    {
+      "id": "T269",
+      "zh-CN": "无法启动设置面板，请确认配套程序位于同一目录。错误码：{errorCode}",
+      "en-US": "Unable to open settings panel. Please verify companion app is in the same directory. Error code: {errorCode}"
+    },
+    {
+      "id": "T270",
+      "zh-CN": "无法等待管理器退出，电量提醒程序将退出。",
+      "en-US": "Unable to wait for Manager to exit. Battery reminder will now exit."
+    },
+    {
+      "id": "T271",
+      "zh-CN": "管理器已打开",
+      "en-US": "Manager is already open"
+    },
+    {
+      "id": "T272",
+      "zh-CN": "未连接鼠标",
+      "en-US": "No mouse connected"
+    },
+    {
+      "id": "T273",
+      "zh-CN": "未连接接收器",
+      "en-US": "No receiver connected"
+    },
+    {
+      "id": "T274",
+      "zh-CN": "程序出错",
+      "en-US": "Application error"
+    },
+    {
+      "id": "T275",
+      "zh-CN": "鼠标电量 {percent}%",
+      "en-US": "Mouse battery {percent}%"
+    },
+    {
+      "id": "T276",
+      "zh-CN": "设置面板",
+      "en-US": "Settings Panel"
+    },
+    {
+      "id": "T277",
+      "zh-CN": "无法初始化界面绘制组件。",
+      "en-US": "Unable to initialize UI rendering components."
+    },
+    {
+      "id": "T278",
+      "zh-CN": "鼠标电量提醒",
+      "en-US": "Mouse Battery Reminder"
+    },
+    {
+      "id": "T279",
+      "zh-CN": "开机启动路径修复失败，请通过右键菜单重新设置。",
+      "en-US": "Failed to repair startup path. Please reconfigure via the context menu."
+    },
+    {
+      "id": "T280",
+      "zh-CN": "刷新",
+      "en-US": "Refresh"
+    },
+    {
+      "id": "T281",
+      "zh-CN": "退出",
+      "en-US": "Exit"
+    },
+    {
+      "id": "T282",
+      "zh-CN": "无法初始化 Windows 组件。",
+      "en-US": "Unable to initialize Windows components."
+    },
+    {
+      "id": "T283",
+      "zh-CN": "无法创建托盘窗口。",
+      "en-US": "Unable to create system tray window."
+    },
+    {
+      "id": "T284",
+      "zh-CN": "无法启动设备监听或与管理器交接。",
+      "en-US": "Unable to start device monitoring or hand off with Manager."
+    },
+    {
+      "id": "T285",
+      "zh-CN": "为迈从 G3 定制的第三方管理工具。",
+      "en-US": "A third-party management utility tailored for MCHOSE G3."
+    },
+    {
+      "id": "T286",
+      "zh-CN": "诊断",
+      "en-US": "Diagnostics"
+    },
+    {
+      "id": "T287",
+      "zh-CN": "调试模式",
+      "en-US": "Debug mode"
+    },
+    {
+      "id": "T288",
+      "zh-CN": "链接",
+      "en-US": "Links"
+    },
+    {
+      "id": "T289",
+      "zh-CN": "Github 仓库",
+      "en-US": "GitHub Repository"
+    },
+    {
+      "id": "T290",
+      "zh-CN": "开机自启状态同步失败，请在电池页检查设置。",
+      "en-US": "Failed to sync startup status. Please check settings on the Battery page."
+    },
+    {
+      "id": "T291",
+      "zh-CN": "正在运行其他版本的电量提醒，请退出后启动 0.0.7-alpha。",
+      "en-US": "Another version of Battery Reminder is currently running. Please exit it before launching 0.0.7-alpha."
+    },
+    {
+      "id": "T292",
+      "zh-CN": "无法启动设备通信，错误码：{errorCode}",
+      "en-US": "Unable to start device communication. Error code: {errorCode}"
+    },
+    {
+      "id": "T293",
+      "zh-CN": "托盘监控启动失败，请在电池页关闭后重新开启。",
+      "en-US": "Failed to start tray monitoring. Please toggle it off and on again on the Battery page."
+    },
+    {
+      "id": "T294",
+      "zh-CN": "管理器启动失败，请确认 Windows App Runtime 1.8 与配套文件完整。\n{details}",
+      "en-US": "Failed to launch Manager. Please verify Windows App Runtime 1.8 and all required files are present.\n{details}"
+    },
+    {
+      "id": "T295",
+      "zh-CN": "宏时间补偿数据无效。",
+      "en-US": "Invalid macro clock compensation data."
+    },
+    {
+      "id": "T296",
+      "zh-CN": "补偿后的等待时间超过鼠标可表达的 1048575 ms。",
+      "en-US": "Compensated delay exceeds the maximum supported limit of 1048575 ms."
+    },
+    {
+      "id": "T297",
+      "zh-CN": "设备识别查询发送失败。",
+      "en-US": "Failed to send device identification query."
+    },
+    {
+      "id": "T298",
+      "zh-CN": "设备识别响应读取失败。",
+      "en-US": "Failed to read device identification response."
+    },
+    {
+      "id": "T299",
+      "zh-CN": "参数查询发送失败。",
+      "en-US": "Failed to send parameter query."
+    },
+    {
+      "id": "T300",
+      "zh-CN": "等待读取设备参数超时，未收到匹配响应。",
+      "en-US": "Timed out waiting for device parameters. No matching response received."
+    },
+    {
+      "id": "T301",
+      "zh-CN": "设备参数响应读取失败。",
+      "en-US": "Failed to read device parameter response."
+    },
+    {
+      "id": "T302",
+      "zh-CN": "按键映射查询发送失败。",
+      "en-US": "Failed to send button mapping query."
+    },
+    {
+      "id": "T303",
+      "zh-CN": "按键映射读取失败。",
+      "en-US": "Failed to read button mappings."
+    },
+    {
+      "id": "T304",
+      "zh-CN": "测量恢复记录无效，请保留恢复文件。",
+      "en-US": "Calibration recovery record is invalid. Please keep the recovery file."
+    },
+    {
+      "id": "T305",
+      "zh-CN": "请重新连接原测量设备及接口后重试。",
+      "en-US": "Please reconnect the original calibration device and interface, then try again."
+    },
+    {
+      "id": "T306",
+      "zh-CN": "测量恢复记录保存失败。",
+      "en-US": "Failed to save calibration recovery record."
+    },
+    {
+      "id": "T307",
+      "zh-CN": "查询鼠标连接状态失败。",
+      "en-US": "Failed to query mouse connection status."
+    },
+    {
+      "id": "T308",
+      "zh-CN": "读取鼠标电量失败。",
+      "en-US": "Failed to read mouse battery level."
+    },
+    {
+      "id": "T309",
+      "zh-CN": "枚举鼠标接口失败。",
+      "en-US": "Failed to enumerate mouse interfaces."
+    },
+    {
+      "id": "T310",
+      "zh-CN": "打开鼠标配置接口失败。",
+      "en-US": "Failed to open mouse configuration interface."
+    },
+    {
+      "id": "T311",
+      "zh-CN": "鼠标连接状态响应无效。",
+      "en-US": "Invalid mouse connection status response."
+    },
+    {
+      "id": "T312",
+      "zh-CN": "请完成测量映射恢复后应用配置。",
+      "en-US": "Please finish restoring calibration mappings before applying settings."
+    },
+    {
+      "id": "T313",
+      "zh-CN": "鼠标未连接，设置保留为待应用状态。",
+      "en-US": "Mouse is disconnected. Settings remain pending."
+    },
+    {
+      "id": "T314",
+      "zh-CN": "应用前读取失败：{details}",
+      "en-US": "Pre-apply read failed: {details}"
+    },
+    {
+      "id": "T315",
+      "zh-CN": "应用前读取宏失败，编辑已保留。",
+      "en-US": "Failed to read macros before applying. Changes have been kept."
+    },
+    {
+      "id": "T316",
+      "zh-CN": "宏页发送失败，部分宏数据可能已生效；编辑已保留。",
+      "en-US": "Failed to send macro page. Some macro data may have taken effect. Changes have been kept."
+    },
+    {
+      "id": "T317",
+      "zh-CN": "宏写入后读取失败，部分宏数据可能已生效；编辑已保留。",
+      "en-US": "Failed to read back macro after writing. Some macro data may have taken effect. Changes have been kept."
+    },
+    {
+      "id": "T318",
+      "zh-CN": "宏页读回未通过，按键引用尚未提交；编辑已保留。",
+      "en-US": "Macro page verification failed. Button references were not submitted. Changes have been kept."
+    },
+    {
+      "id": "T319",
+      "zh-CN": "写入后无法确认设备设置：{details}",
+      "en-US": "Unable to verify device settings after writing: {details}"
+    },
+    {
+      "id": "T320",
+      "zh-CN": "设备读回值与待应用设置不一致，部分修改可能已生效。",
+      "en-US": "Values read back from device do not match pending settings. Some changes may have taken effect."
+    },
+    {
+      "id": "T321",
+      "zh-CN": "写入后无法确认按键映射：{details}",
+      "en-US": "Unable to verify button mappings after writing: {details}"
+    },
+    {
+      "id": "T322",
+      "zh-CN": "按键读回值与待应用设置不一致，部分修改可能已生效。",
+      "en-US": "Button mappings read back do not match pending settings. Some changes may have taken effect."
+    },
+    {
+      "id": "T323",
+      "zh-CN": "鼠标配置已写入，但时钟补偿设置保存失败。",
+      "en-US": "Mouse configuration written, but failed to save clock compensation settings."
+    },
+    {
+      "id": "T324",
+      "zh-CN": "设置已应用。",
+      "en-US": "Settings applied."
+    },
+    {
+      "id": "T325",
+      "zh-CN": "设备通信线程异常，请关闭并重新打开管理器。",
+      "en-US": "Device communication thread error. Please close and reopen Manager."
+    },
+    {
+      "id": "T326",
+      "zh-CN": "请先完成时钟测量。",
+      "en-US": "Please complete clock calibration first."
+    },
+    {
+      "id": "T327",
+      "zh-CN": "休眠时间须为 1–30 分钟。",
+      "en-US": "Sleep timer must be 1–30 minutes."
+    },
+    {
+      "id": "T328",
+      "zh-CN": "按键消抖须为 1–14 ms。",
+      "en-US": "Debounce time must be 1–14 ms."
+    },
+    {
+      "id": "T329",
+      "zh-CN": "回报率须为 125、250、500 或 1000 Hz。",
+      "en-US": "Polling rate must be 125, 250, 500, or 1000 Hz."
+    },
+    {
+      "id": "T330",
+      "zh-CN": "DPI 档位数量须为 1–6 档。",
+      "en-US": "Number of DPI stages must be 1–6."
+    },
+    {
+      "id": "T331",
+      "zh-CN": "当前 DPI 档位超出有效范围。",
+      "en-US": "Current DPI stage is out of valid range."
+    },
+    {
+      "id": "T332",
+      "zh-CN": "第 {stage} 档 DPI 须为 100–12000，步长 100。",
+      "en-US": "Stage {stage} DPI must be 100–12000 in steps of 100."
+    },
+    {
+      "id": "T333",
+      "zh-CN": "DPI 颜色值超出 RGB 范围。",
+      "en-US": "DPI color value is out of RGB range."
+    },
+    {
+      "id": "T334",
+      "zh-CN": "设备参数报文的长度、头部或校验错误。",
+      "en-US": "Device parameter packet length, header, or checksum error."
+    },
+    {
+      "id": "T335",
+      "zh-CN": "设备返回了不支持的回报率。",
+      "en-US": "Device returned an unsupported polling rate."
+    },
+    {
+      "id": "T336",
+      "zh-CN": "设备返回了不支持的运动算法状态。",
+      "en-US": "Device returned an unsupported motion algorithm state."
+    },
+    {
+      "id": "T337",
+      "zh-CN": "{button}功能",
+      "en-US": "{button} function"
+    },
+    {
+      "id": "T338",
+      "zh-CN": "确认倒计时，10 秒",
+      "en-US": "Confirmation countdown, 10 seconds"
+    },
+    {
+      "id": "T339",
+      "zh-CN": "结束录制",
+      "en-US": "Stop recording"
+    },
+    {
+      "id": "T340",
+      "zh-CN": "开始录制",
+      "en-US": "Start recording"
+    },
+    {
+      "id": "T341",
+      "zh-CN": "{key} 按下",
+      "en-US": "{key} pressed"
+    },
+    {
+      "id": "T342",
+      "zh-CN": "{key} 松开",
+      "en-US": "{key} released"
+    },
+    {
+      "id": "T343",
+      "zh-CN": "当前 DPI 档位",
+      "en-US": "Current DPI stage"
+    },
+    {
+      "id": "T344",
+      "zh-CN": "十六进制颜色",
+      "en-US": "Hex color"
+    },
+    {
+      "id": "T345",
+      "zh-CN": "应用",
+      "en-US": "Apply"
+    },
+    {
+      "id": "T346",
+      "zh-CN": "恢复",
+      "en-US": "Restore"
+    },
+    {
+      "id": "T347",
+      "zh-CN": "休眠设置，分钟",
+      "en-US": "Sleep timer, minutes"
+    },
+    {
+      "id": "T348",
+      "zh-CN": "按键消抖，毫秒",
+      "en-US": "Debounce time, milliseconds"
+    },
+    {
+      "id": "T349",
+      "zh-CN": "G3 Companion 图标",
+      "en-US": "G3 Companion icon"
+    },
+    {
+      "id": "T350",
+      "zh-CN": "新建配置",
+      "en-US": "New profile"
+    },
+    {
+      "id": "T351",
+      "zh-CN": "重命名配置",
+      "en-US": "Rename profile"
+    },
+    {
+      "id": "T352",
+      "zh-CN": "复制配置",
+      "en-US": "Duplicate profile"
+    },
+    {
+      "id": "T353",
+      "zh-CN": "新增项目",
+      "en-US": "Add item"
+    },
+    {
+      "id": "T354",
+      "zh-CN": "执行方式",
+      "en-US": "Playback mode"
+    },
+    {
+      "id": "T355",
+      "zh-CN": "执行次数",
+      "en-US": "Repeat count"
+    },
+    {
+      "id": "T356",
+      "zh-CN": "删除项目",
+      "en-US": "Delete item"
+    },
+    {
+      "id": "T357",
+      "zh-CN": "保存配置",
+      "en-US": "Save profile"
+    },
+    {
+      "id": "T358",
+      "zh-CN": "取消配置编辑",
+      "en-US": "Cancel profile editing"
+    },
+    {
+      "id": "T359",
+      "zh-CN": "开机自启托盘电量监控",
+      "en-US": "Launch tray battery monitor on startup"
+    },
+    {
+      "id": "T360",
+      "zh-CN": "鼠标开关先拨到 OFF，再拨到 ON",
+      "en-US": "Toggle mouse power switch to OFF, then to ON"
+    },
+    {
+      "id": "T361",
+      "zh-CN": "Ctrl + - Ctrl + - 缩小 Edit",
+      "en-US": "Ctrl + - Ctrl + - Zoom Out Edit"
+    },
+    {
+      "id": "T362",
+      "zh-CN": "Ctrl + Y Ctrl + Y 恢复 Edit",
+      "en-US": "Ctrl + Y Ctrl + Y Redo Edit"
+    },
+    {
+      "id": "T363",
+      "zh-CN": "Ctrl + = Ctrl + = 放大 Edit",
+      "en-US": "Ctrl + = Ctrl + = Zoom In Edit"
+    },
+    {
+      "id": "T364",
+      "zh-CN": "Ctrl + 0 Ctrl + 0 复位 Edit",
+      "en-US": "Ctrl + 0 Ctrl + 0 Reset Edit"
+    },
+    {
+      "id": "T365",
+      "zh-CN": "Ctrl + C Ctrl + C 复制 Edit",
+      "en-US": "Ctrl + C Ctrl + C Copy Edit"
+    },
+    {
+      "id": "T366",
+      "zh-CN": "Ctrl + A Ctrl + A 全选 Edit",
+      "en-US": "Ctrl + A Ctrl + A Select All Edit"
+    },
+    {
+      "id": "T367",
+      "zh-CN": "Ctrl + N Ctrl + N 新建 Edit",
+      "en-US": "Ctrl + N Ctrl + N New Edit"
+    },
+    {
+      "id": "T368",
+      "zh-CN": "Ctrl + X Ctrl + X 剪切 Edit",
+      "en-US": "Ctrl + X Ctrl + X Cut Edit"
+    },
+    {
+      "id": "T369",
+      "zh-CN": "Ctrl + S Ctrl + S 保存 Edit",
+      "en-US": "Ctrl + S Ctrl + S Save Edit"
+    },
+    {
+      "id": "T370",
+      "zh-CN": "Ctrl + V Ctrl + V 粘贴 Edit",
+      "en-US": "Ctrl + V Ctrl + V Paste Edit"
+    },
+    {
+      "id": "T371",
+      "zh-CN": "Ctrl + Z Ctrl + Z 撤消 Edit",
+      "en-US": "Ctrl + Z Ctrl + Z Undo Edit"
+    },
+    {
+      "id": "T372",
+      "zh-CN": "Ctrl + O Ctrl + O 打开 Edit",
+      "en-US": "Ctrl + O Ctrl + O Open Edit"
+    },
+    {
+      "id": "T373",
+      "zh-CN": "Ctrl + T Ctrl + T 新建项 Edit",
+      "en-US": "Ctrl + T Ctrl + T New Tab Edit"
+    },
+    {
+      "id": "T374",
+      "zh-CN": "Ctrl + W Ctrl + W 关闭项 Edit",
+      "en-US": "Ctrl + W Ctrl + W Close Tab Edit"
+    },
+    {
+      "id": "T375",
+      "zh-CN": "Ctrl + Shift + Esc Ctrl + Shift + Esc 任务管理器 productivitys",
+      "en-US": "Ctrl + Shift + Esc Ctrl + Shift + Esc Task Manager productivitys"
+    },
+    {
+      "id": "T376",
+      "zh-CN": "Ctrl + Esc Ctrl + Esc 开始菜单 productivitys",
+      "en-US": "Ctrl + Esc Ctrl + Esc Start Menu productivitys"
+    },
+    {
+      "id": "T377",
+      "zh-CN": "Ctrl + 左 Windows + 小键盘 Enter LWindows + Ctrl + Eneter 打开叙述 Windows Win Windows徽标",
+      "en-US": "Ctrl + Left Windows + Num Enter LWindows + Ctrl + Eneter Narrator Windows Win Windows logo"
+    },
+    {
+      "id": "T378",
+      "zh-CN": "Alt + Left Alt + Left 后退 Navigation",
+      "en-US": "Alt + Left Alt + Left Back Navigation"
+    },
+    {
+      "id": "T379",
+      "zh-CN": "Alt + Right Alt + Right 前移 Navigation",
+      "en-US": "Alt + Right Alt + Right Forward Navigation"
+    },
+    {
+      "id": "T380",
+      "zh-CN": "Alt + Tab Alt  + Tab 应用切换 productivitys",
+      "en-US": "Alt + Tab Alt  + Tab Task Switcher productivitys"
+    },
+    {
+      "id": "T381",
+      "zh-CN": "Alt + F4 Alt  + F4 结束应用 productivitys",
+      "en-US": "Alt + F4 Alt  + F4 Close App productivitys"
+    },
+    {
+      "id": "T382",
+      "zh-CN": "Alt + Esc Alt  + Esc 切换到下一个应用 productivitys",
+      "en-US": "Alt + Esc Alt  + Esc Switch to Next App productivitys"
+    },
+    {
+      "id": "T383",
+      "zh-CN": "左 Windows + Tab LWindows + tab 任务栏 Windows Win Windows徽标",
+      "en-US": "Left Windows + Tab LWindows + tab Task View Windows Win Windows logo"
+    },
+    {
+      "id": "T384",
+      "zh-CN": "左 Windows + D LWindows + D 隐藏/显示 桌面 Windows Win Windows徽标",
+      "en-US": "Left Windows + D LWindows + D Show Desktop Windows Win Windows logo"
+    },
+    {
+      "id": "T385",
+      "zh-CN": "左 Windows + T LWindows + T 循环任务栏应用程序 Windows Win Windows徽标",
+      "en-US": "Left Windows + T LWindows + T Cycle Taskbar Apps Windows Win Windows logo"
+    },
+    {
+      "id": "T386",
+      "zh-CN": "左 Windows + A LWindows + A 行动中心 Windows Win Windows徽标",
+      "en-US": "Left Windows + A LWindows + A Action Center Windows Win Windows logo"
+    },
+    {
+      "id": "T387",
+      "zh-CN": "左 Windows + E LWindows + E 文件资源管理器 Windows Win Windows徽标",
+      "en-US": "Left Windows + E LWindows + E File Explorer Windows Win Windows logo"
+    },
+    {
+      "id": "T388",
+      "zh-CN": "左 Windows + I LWindows + I Windows设置中心 Windows Win Windows徽标",
+      "en-US": "Left Windows + I LWindows + I Windows Settings Windows Win Windows logo"
+    },
+    {
+      "id": "T389",
+      "zh-CN": "左 Windows + L LWindows + L 锁屏 Windows Win Windows徽标",
+      "en-US": "Left Windows + L LWindows + L Lock Screen Windows Win Windows logo"
+    },
+    {
+      "id": "T390",
+      "zh-CN": "左 Windows + K LWindows + K 投屏到其他设备 Windows Win Windows徽标",
+      "en-US": "Left Windows + K LWindows + K Cast Windows Win Windows logo"
+    },
+    {
+      "id": "T391",
+      "zh-CN": "左 Windows + B LWindows + B 跳转到托盘 Windows Win Windows徽标",
+      "en-US": "Left Windows + B LWindows + B System Tray Windows Win Windows logo"
+    },
+    {
+      "id": "T392",
+      "zh-CN": "左 Windows + G LWindows + G 启动xbox 游戏栏 Windows Win Windows徽标",
+      "en-US": "Left Windows + G LWindows + G Xbox Game Bar Windows Win Windows logo"
+    },
+    {
+      "id": "T393",
+      "zh-CN": "左 Windows + R LWindows + R 运行 Windows Win Windows徽标",
+      "en-US": "Left Windows + R LWindows + R Run Windows Win Windows logo"
+    },
+    {
+      "id": "T394",
+      "zh-CN": "左 Windows + S LWindows + S 搜索 Windows Win Windows徽标",
+      "en-US": "Left Windows + S LWindows + S Search Windows Win Windows logo"
+    },
+    {
+      "id": "T395",
+      "zh-CN": "左 Windows + U LWindows + U 显示设置 Windows Win Windows徽标",
+      "en-US": "Left Windows + U LWindows + U Display Settings Windows Win Windows logo"
+    },
+    {
+      "id": "T396",
+      "zh-CN": "左 Windows + X LWindows + X 简易菜单 Windows Win Windows徽标",
+      "en-US": "Left Windows + X LWindows + X Quick Link Menu Windows Win Windows logo"
+    },
+    {
+      "id": "T397",
+      "zh-CN": "左 Windows + . LWindows + . 表情框 Windows Win Windows徽标",
+      "en-US": "Left Windows + . LWindows + . Emoji Panel Windows Win Windows logo"
+    },
+    {
+      "id": "T398",
+      "zh-CN": "左 Windows + = LWindows + = 放大镜 Windows Win Windows徽标",
+      "en-US": "Left Windows + = LWindows + = Magnifier Windows Win Windows logo"
+    },
+    {
+      "id": "T399",
+      "zh-CN": "禁用  禁用 Other",
+      "en-US": "Disabled Disabled Other"
+    },
+    {
+      "id": "T400",
+      "zh-CN": "狙击键  狙击键 Other",
+      "en-US": "Sniper Key Sniper Key Other"
+    },
+    {
+      "id": "T401",
+      "zh-CN": "左摆  左摆 Other",
+      "en-US": "Tilt Left Tilt Left Other"
+    },
+    {
+      "id": "T402",
+      "zh-CN": "右摆  右摆 Other",
+      "en-US": "Tilt Right Tilt Right Other"
+    },
+    {
+      "id": "T403",
+      "zh-CN": "左键 左键  MOUSE",
+      "en-US": "Left Click Left Click  MOUSE"
+    },
+    {
+      "id": "T404",
+      "zh-CN": "右键 右键  MOUSE",
+      "en-US": "Right Click Right Click  MOUSE"
+    },
+    {
+      "id": "T405",
+      "zh-CN": "中键 中键  MOUSE",
+      "en-US": "Middle Click Middle Click  MOUSE"
+    },
+    {
+      "id": "T406",
+      "zh-CN": "小键盘 - Num -  HIDE",
+      "en-US": "Num - Num -  HIDE"
+    },
+    {
+      "id": "T407",
+      "zh-CN": "小键盘 * Num *  HIDE",
+      "en-US": "Num * Num *  HIDE"
+    },
+    {
+      "id": "T408",
+      "zh-CN": "小键盘 / Num /  HIDE",
+      "en-US": "Num / Num /  HIDE"
+    },
+    {
+      "id": "T409",
+      "zh-CN": "小键盘 + Num +  HIDE",
+      "en-US": "Num + Num +  HIDE"
+    },
+    {
+      "id": "T410",
+      "zh-CN": "小键盘 0 Num 0  HIDE",
+      "en-US": "Num 0 Num 0  HIDE"
+    },
+    {
+      "id": "T411",
+      "zh-CN": "小键盘 1 Num 1  HIDE",
+      "en-US": "Num 1 Num 1  HIDE"
+    },
+    {
+      "id": "T412",
+      "zh-CN": "小键盘 2 Num 2  HIDE",
+      "en-US": "Num 2 Num 2  HIDE"
+    },
+    {
+      "id": "T413",
+      "zh-CN": "小键盘 3 Num 3  HIDE",
+      "en-US": "Num 3 Num 3  HIDE"
+    },
+    {
+      "id": "T414",
+      "zh-CN": "小键盘 4 Num 4  HIDE",
+      "en-US": "Num 4 Num 4  HIDE"
+    },
+    {
+      "id": "T415",
+      "zh-CN": "小键盘 5 Num 5  HIDE",
+      "en-US": "Num 5 Num 5  HIDE"
+    },
+    {
+      "id": "T416",
+      "zh-CN": "小键盘 6 Num 6  HIDE",
+      "en-US": "Num 6 Num 6  HIDE"
+    },
+    {
+      "id": "T417",
+      "zh-CN": "小键盘 7 Num 7  HIDE",
+      "en-US": "Num 7 Num 7  HIDE"
+    },
+    {
+      "id": "T418",
+      "zh-CN": "小键盘 8 Num 8  HIDE",
+      "en-US": "Num 8 Num 8  HIDE"
+    },
+    {
+      "id": "T419",
+      "zh-CN": "小键盘 9 Num 9  HIDE",
+      "en-US": "Num 9 Num 9  HIDE"
+    },
+    {
+      "id": "T420",
+      "zh-CN": "小键盘 Del Num Del  HIDE",
+      "en-US": "Num Del Num Del  HIDE"
+    },
+    {
+      "id": "T421",
+      "zh-CN": "小键盘 Enter Num Enter  HIDE",
+      "en-US": "Num Enter Num Enter  HIDE"
+    },
+    {
+      "id": "T422",
+      "zh-CN": "小键盘 Lock Num Lock  HIDE",
+      "en-US": "Num Lock Num Lock  HIDE"
+    },
+    {
+      "id": "T423",
+      "zh-CN": "左 Windows Left Windows  HIDE Win Windows徽标",
+      "en-US": "Left Windows Left Windows  HIDE Win Windows logo"
+    },
+    {
+      "id": "T424",
+      "zh-CN": "右 Windows Right Windows  HIDE Win Windows徽标",
+      "en-US": "Right Windows Right Windows  HIDE Win Windows logo"
+    },
+    {
+      "id": "T425",
+      "zh-CN": "左 Alt Left Alt  HIDE",
+      "en-US": "Left Alt Left Alt  HIDE"
+    },
+    {
+      "id": "T426",
+      "zh-CN": "右 Alt Right Alt  HIDE",
+      "en-US": "Right Alt Right Alt  HIDE"
+    },
+    {
+      "id": "T427",
+      "zh-CN": "左 Ctrl Left Ctrl  HIDE",
+      "en-US": "Left Ctrl Left Ctrl  HIDE"
+    },
+    {
+      "id": "T428",
+      "zh-CN": "右 Ctrl Right Ctrl  HIDE",
+      "en-US": "Right Ctrl Right Ctrl  HIDE"
+    },
+    {
+      "id": "T429",
+      "zh-CN": "左 Shift Left Shift  HIDE",
+      "en-US": "Left Shift Left Shift  HIDE"
+    },
+    {
+      "id": "T430",
+      "zh-CN": "右 Shift Right Shift  HIDE",
+      "en-US": "Right Shift Right Shift  HIDE"
+    },
+    {
+      "id": "T431",
+      "zh-CN": "前进 前进  MOUSE",
+      "en-US": "Forward Forward  MOUSE"
+    },
+    {
+      "id": "T432",
+      "zh-CN": "后退 后退  MOUSE",
+      "en-US": "Back Back  MOUSE"
+    },
+    {
+      "id": "T433",
+      "zh-CN": "滚轮上 滚轮上  MOUSE",
+      "en-US": "Scroll Up Scroll Up  MOUSE"
+    },
+    {
+      "id": "T434",
+      "zh-CN": "滚轮下 滚轮下  MOUSE",
+      "en-US": "Scroll Down Scroll Down  MOUSE"
+    },
+    {
+      "id": "T435",
+      "zh-CN": "DPI 切换  Dpi 切换 DPi",
+      "en-US": "DPI Cycle DPI Cycle DPi"
+    },
+    {
+      "id": "T436",
+      "zh-CN": "剪切 剪切  EDIT",
+      "en-US": "Cut Cut  EDIT"
+    },
+    {
+      "id": "T437",
+      "zh-CN": "复制 复制  EDIT",
+      "en-US": "Copy Copy  EDIT"
+    },
+    {
+      "id": "T438",
+      "zh-CN": "粘贴 粘贴  EDIT",
+      "en-US": "Paste Paste  EDIT"
+    },
+    {
+      "id": "T439",
+      "zh-CN": "撤消 撤消  EDIT",
+      "en-US": "Undo Undo  EDIT"
+    },
+    {
+      "id": "T440",
+      "zh-CN": "播放/暂停 播放/暂停  Multimedia",
+      "en-US": "Play / Pause Play / Pause  Multimedia"
+    },
+    {
+      "id": "T441",
+      "zh-CN": "静音 静音  Multimedia",
+      "en-US": "Mute Mute  Multimedia"
+    },
+    {
+      "id": "T442",
+      "zh-CN": "停止播放 停止播放  Multimedia",
+      "en-US": "Stop Stop  Multimedia"
+    },
+    {
+      "id": "T443",
+      "zh-CN": "上一曲 上一曲  Multimedia",
+      "en-US": "Previous Track Previous Track  Multimedia"
+    },
+    {
+      "id": "T444",
+      "zh-CN": "下一曲 下一曲  Multimedia",
+      "en-US": "Next Track Next Track  Multimedia"
+    },
+    {
+      "id": "T445",
+      "zh-CN": "音量 + 音量 +  Multimedia",
+      "en-US": "Volume + Volume +  Multimedia"
+    },
+    {
+      "id": "T446",
+      "zh-CN": "音量 - 音量 -  Multimedia",
+      "en-US": "Volume - Volume -  Multimedia"
+    },
+    {
+      "id": "T447",
+      "zh-CN": "浏览器 浏览器  Tool",
+      "en-US": "Browser Browser  Tool"
+    },
+    {
+      "id": "T448",
+      "zh-CN": "计算器 计算器  Tool",
+      "en-US": "Calculator Calculator  Tool"
+    },
+    {
+      "id": "T449",
+      "zh-CN": "邮件 邮件  Tool",
+      "en-US": "Mail Mail  Tool"
+    },
+    {
+      "id": "T450",
+      "zh-CN": "我的电脑 我的电脑  Tool",
+      "en-US": "This PC This PC  Tool"
+    },
+    {
+      "id": "T451",
+      "zh-CN": "收藏夹 收藏夹  Tool",
+      "en-US": "Favorites Favorites  Tool"
+    },
+    {
+      "id": "T452",
+      "zh-CN": "关闭窗口 关闭窗口  OS",
+      "en-US": "Close Window Close Window  OS"
+    },
+    {
+      "id": "T453",
+      "zh-CN": "锁定计算机 锁定计算机  OS",
+      "en-US": "Lock PC Lock PC  OS"
+    },
+    {
+      "id": "T454",
+      "zh-CN": "放大 放大  OS",
+      "en-US": "Zoom In Zoom In  OS"
+    },
+    {
+      "id": "T455",
+      "zh-CN": "缩小 缩小  OS",
+      "en-US": "Zoom Out Zoom Out  OS"
+    },
+    {
+      "id": "T456",
+      "zh-CN": "显示桌面 显示桌面  OS",
+      "en-US": "Show Desktop Show Desktop  OS"
+    },
+    {
+      "id": "T457",
+      "zh-CN": "任务管理器 任务管理器  OS",
+      "en-US": "Task Manager Task Manager  OS"
+    },
+    {
+      "id": "T458",
+      "zh-CN": "保存 保存  OS",
+      "en-US": "Save Save  OS"
+    },
+    {
+      "id": "T459",
+      "zh-CN": "屏幕亮度 + 屏幕亮度 +  OS",
+      "en-US": "Brightness + Brightness +  OS"
+    },
+    {
+      "id": "T460",
+      "zh-CN": "屏幕亮度 - 屏幕亮度 -  OS",
+      "en-US": "Brightness - Brightness -  OS"
+    }
+  ],
+  "xamlStrings": [
+    "T007",
+    "T012",
+    "T013",
+    "T014",
+    "T015",
+    "T031",
+    "T032",
+    "T033",
+    "T034",
+    "T035",
+    "T036",
+    "T037",
+    "T038",
+    "T040",
+    "T053",
+    "T054",
+    "T055",
+    "T056",
+    "T057",
+    "T058",
+    "T059",
+    "T060",
+    "T061",
+    "T062",
+    "T063",
+    "T064",
+    "T199",
+    "T239",
+    "T244",
+    "T254",
+    "T255",
+    "T256",
+    "T257",
+    "T258",
+    "T259",
+    "T260",
+    "T285",
+    "T286",
+    "T287",
+    "T288",
+    "T289",
+    "T340",
+    "T344",
+    "T345",
+    "T346",
+    "T347",
+    "T348",
+    "T349",
+    "T350",
+    "T351",
+    "T352",
+    "T353",
+    "T354",
+    "T355",
+    "T356",
+    "T357",
+    "T358",
+    "T359",
+    "T360"
+  ]
+}

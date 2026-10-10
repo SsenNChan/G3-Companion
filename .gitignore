@@ -1,0 +1,17 @@
+.build/
+.vs/
+*.user
+*.suo
+*.exe
+*.dll
+*.zip
+*.obj
+*.pdb
+*.lib
+*.exp
+*.ilk
+*.res
+*.pri
+*.winmd
+*.log
+settings-*.ini

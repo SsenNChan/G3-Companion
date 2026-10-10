@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <BuildRoot Condition="'$(BuildRoot)'==''">$(MSBuildThisFileDirectory)..\..\..\.build\0.0.7-alpha</BuildRoot>
+    <NugetPackageDirectory Condition="'$(NugetPackageDirectory)'==''">$(BuildRoot)\packages</NugetPackageDirectory>
+    <RestoreProjectStyle>PackagesConfig</RestoreProjectStyle>
+  </PropertyGroup>
+  <Import Project="$(NugetPackageDirectory)\Microsoft.Windows.CppWinRT.2.0.250303.1\build\native\Microsoft.Windows.CppWinRT.props" />
+  <Import Project="$(NugetPackageDirectory)\Microsoft.Windows.SDK.BuildTools.10.0.26100.4654\build\Microsoft.Windows.SDK.BuildTools.props" />
+  <Import Project="$(NugetPackageDirectory)\Microsoft.Windows.SDK.BuildTools.MSIX.1.7.20250829.1\build\Microsoft.Windows.SDK.BuildTools.MSIX.props" />
+  <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.Base.1.8.251216001\build\native\Microsoft.WindowsAppSDK.Base.props" />
+  <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.Foundation.1.8.260803002\build\native\Microsoft.WindowsAppSDK.Foundation.props" />
+  <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.InteractiveExperiences.1.8.260708001\build\native\Microsoft.WindowsAppSDK.InteractiveExperiences.props" />
+  <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.WinUI.1.8.260803003\build\native\Microsoft.WindowsAppSDK.WinUI.props" />
+  <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.Runtime.1.8.260921001\build\native\Microsoft.WindowsAppSDK.Runtime.props" />
+  <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.1.8.260921001\build\native\Microsoft.WindowsAppSDK.props" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9F195861-B63E-438C-AEF9-7928F5B41FB9}</ProjectGuid>
+    <ProjectName>G3Companion</ProjectName>
+    <RootNamespace>G3Companion</RootNamespace>
+    <TargetName>G3-Companion</TargetName>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.17763.0</WindowsTargetPlatformMinVersion>
+    <DefaultLanguage>zh-CN</DefaultLanguage>
+    <UseWinUI>true</UseWinUI>
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSDKSelfContained>false</WindowsAppSDKSelfContained>
+    <WindowsAppSdkBootstrapInitialize>false</WindowsAppSdkBootstrapInitialize>
+    <WindowsAppSdkAutoInitialize>false</WindowsAppSdkAutoInitialize>
+    <WindowsAppSdkUndockedRegFreeWinRTInitialize>false</WindowsAppSdkUndockedRegFreeWinRTInitialize>
+    <WindowsAppSDKDeploymentManagerInitialize>false</WindowsAppSDKDeploymentManagerInitialize>
+    <AppContainerApplication>false</AppContainerApplication>
+    <AppxPackage>false</AppxPackage>
+    <EnableMsixTooling>false</EnableMsixTooling>
+    <CppWinRTOptimized>true</CppWinRTOptimized>
+    <CppWinRTEnableLegacyCoroutines>false</CppWinRTEnableLegacyCoroutines>
+    <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
+    <MinimalCoreWin>true</MinimalCoreWin>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <DesktopCompatible>true</DesktopCompatible>
+    <WholeProgramOptimization Condition="'$(Configuration)'=='Release'">true</WholeProgramOptimization>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <UseDebugLibraries Condition="'$(Configuration)'!='Debug'">false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <OutDir>$(BuildRoot)\winui\$(ProjectName)\</OutDir>
+    <IntDir>$(BuildRoot)\winui-obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <GeneratedFilesDir>$(IntDir)Generated Files\</GeneratedFilesDir>
+    <ManagedAssembly>false</ManagedAssembly>
+    <DefaultLanguageSourceExtension>.cpp</DefaultLanguageSourceExtension>
+    <TargetPlatformVersion>$(WindowsTargetPlatformVersion)</TargetPlatformVersion>
+    <TargetPlatformMinVersion>$(WindowsTargetPlatformMinVersion)</TargetPlatformMinVersion>
+    <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
+    <XamlGeneratedOutputPath>$(GeneratedFilesDir)</XamlGeneratedOutputPath>
+    <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    <OutputType>WinExe</OutputType>
+    <ProjectPriFileName>resources.pri</ProjectPriFileName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader><PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
+      <WarningLevel>Level4</WarningLevel><LanguageStandard>stdcpp20</LanguageStandard>
+      <ConformanceMode>true</ConformanceMode><AdditionalOptions>/utf-8 /bigobj /Gw %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DISABLE_XAML_GENERATED_MAIN;MCHOSE_UNIFIED_ENTRY;WIN32_LEAN_AND_MEAN;NOMINMAX;WINVER=0x0A00;_WIN32_WINNT=0x0A00;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Debug'">MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)'!='Debug'">MultiThreadedDLL</RuntimeLibrary>
+      <Optimization Condition="'$(Configuration)'!='Debug'">MinSpace</Optimization>
+      <FunctionLevelLinking Condition="'$(Configuration)'=='Release'">true</FunctionLevelLinking>
+      <FavorSizeOrSpeed Condition="'$(Configuration)'=='Release'">Size</FavorSizeOrSpeed>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
+      <StringPooling Condition="'$(Configuration)'=='Release'">true</StringPooling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem><RandomizedBaseAddress>true</RandomizedBaseAddress><DataExecutionPrevention>true</DataExecutionPrevention><ControlFlowGuard>Guard</ControlFlowGuard><EnableCOMDATFolding>true</EnableCOMDATFolding><OptimizeReferences>true</OptimizeReferences>
+      <LinkTimeCodeGeneration Condition="'$(Configuration)'=='Release'">UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <AdditionalDependencies>windowsapp.lib;dwmapi.lib;d2d1.lib;dwrite.lib;gdi32.lib;setupapi.lib;hid.lib;shell32.lib;ole32.lib;advapi32.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ResourceCompile><AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <PreprocessorDefinitions>WINRT_NO_SOURCE_LOCATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Manifest Include="app.manifest" />
+    <None Include="packages.config" />
+    <ApplicationDefinition Include="App.xaml" />
+    <Page Include="MainWindow.xaml" />
+    <Page Include="CompactColorPicker.xaml" />
+    <Page Include="PowerSwitchIllustration.xaml" />
+    <Page Include="ApplicationIcon.xaml" />
+    <Page Include="ApplicationStyles.xaml" />
+    <Midl Include="Project.idl" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="LocalizationResources.h" />
+    <ClInclude Include="..\localization.h" />
+    <ClInclude Include="..\localization_strings.h" />
+    <None Include="..\localization\strings.json" />
+    <None Include="..\localization\generate.ps1" />
+    <ClInclude Include="App.xaml.h"><DependentUpon>App.xaml</DependentUpon></ClInclude>
+    <ClInclude Include="MainWindow.xaml.h"><DependentUpon>MainWindow.xaml</DependentUpon></ClInclude>
+    <ClCompile Include="pch.cpp"><PrecompiledHeader>Create</PrecompiledHeader></ClCompile>
+    <ClCompile Include="App.xaml.cpp"><DependentUpon>App.xaml</DependentUpon></ClCompile>
+    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="..\tray_002.cpp"><PrecompiledHeader>NotUsing</PrecompiledHeader></ClCompile>
+    <ClCompile Include="MainWindow.xaml.cpp"><DependentUpon>MainWindow.xaml</DependentUpon></ClCompile>
+    <ClCompile Include="MainWindow.Buttons.cpp" />
+    <ClCompile Include="MainWindow.Macros.cpp" />
+    <ClCompile Include="MainWindow.ClockCalibration.cpp" />
+    <ClCompile Include="XamlMetadataCompilation.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ResourceCompile Include="..\alpha_007.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(NugetPackageDirectory)\Microsoft.Web.WebView2.1.0.3179.45\build\native\Microsoft.Web.WebView2.targets" />
+    <Import Project="$(NugetPackageDirectory)\Microsoft.Windows.SDK.BuildTools.10.0.26100.4654\build\Microsoft.Windows.SDK.BuildTools.targets" />
+    <Import Project="$(NugetPackageDirectory)\Microsoft.Windows.SDK.BuildTools.MSIX.1.7.20250829.1\build\Microsoft.Windows.SDK.BuildTools.MSIX.targets" />
+    <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.Base.1.8.251216001\build\native\Microsoft.WindowsAppSDK.Base.targets" />
+    <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.Foundation.1.8.260803002\build\native\Microsoft.WindowsAppSDK.Foundation.targets" />
+    <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.InteractiveExperiences.1.8.260708001\build\native\Microsoft.WindowsAppSDK.InteractiveExperiences.targets" />
+    <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.WinUI.1.8.260803003\build\native\Microsoft.WindowsAppSDK.WinUI.targets" />
+    <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.Runtime.1.8.260921001\build\native\Microsoft.WindowsAppSDK.Runtime.targets" />
+    <Import Project="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.1.8.260921001\build\native\Microsoft.WindowsAppSDK.targets" />
+    <Import Project="$(NugetPackageDirectory)\Microsoft.Windows.CppWinRT.2.0.250303.1\build\native\Microsoft.Windows.CppWinRT.targets" />
+  </ImportGroup>
+  <!-- Native XAML scheduling for an unpackaged Win32 project. The actual
+       compiler tasks are supplied by the official WinUI NuGet package. -->
+  <PropertyGroup>
+    <BeforeMidlCompileTargets>MarkupCompilePass1;$(BeforeMidlCompileTargets)</BeforeMidlCompileTargets>
+    <BeforeClCompileTargets>$(BeforeClCompileTargets);MarkupCompilePass2;AddNativeGeneratedXaml</BeforeClCompileTargets>
+    <MarkupCompilePass2DependsOn>NativeXamlReferences;$(MarkupCompilePass2DependsOn)</MarkupCompilePass2DependsOn>
+  </PropertyGroup>
+  <Target Name="NativeXamlReferences">
+    <ItemGroup><WinMDReferenceToCompile Include="@(ReferencePath)" Condition="'%(ReferencePath.Extension)'=='.winmd'" /></ItemGroup>
+  </Target>
+  <Target Name="AddNativeGeneratedXaml">
+    <ItemGroup>
+      <ClCompile Remove="$(GeneratedFilesDir)XamlTypeInfo.g.cpp;$(GeneratedFilesDir)XamlTypeInfo.Impl.g.cpp;$(GeneratedFilesDir)XamlMetaDataProvider.cpp" />
+      <ClCompile Include="$(GeneratedFilesDir)XamlTypeInfo.g.cpp;$(GeneratedFilesDir)XamlTypeInfo.Impl.g.cpp" />
+    </ItemGroup>
+  </Target>
+  <Target Name="PrepareNativeWinUIResources" AfterTargets="Build">
+    <Copy SourceFiles="$(NugetPackageDirectory)\Microsoft.WindowsAppSDK.Foundation.1.8.260803002\runtimes\win-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll" DestinationFolder="$(OutDir)" />
+  </Target>
+</Project>
