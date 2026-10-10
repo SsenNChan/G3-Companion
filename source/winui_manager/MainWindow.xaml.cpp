@@ -122,6 +122,8 @@ namespace winrt::G3Companion::implementation
         InitializeMacroEditor();
         InitializeClockCalibration();
         SYSTEMTIME usageToday{};GetLocalTime(&usageToday);m_usage=BatteryUsage::Empty(usageToday);
+        CreateUsageChart();
+        RenderUsage();
         m_usageTimer=DispatcherQueue().CreateTimer();m_usageTimer.Interval(std::chrono::minutes(1));
         m_usageTimer.Tick([weak](auto const&,auto const&){if(auto self=weak.get();self && !self->m_closed)self->RefreshUsage();});
         Navigation().SelectedItem(GeneralItem());
@@ -417,13 +419,11 @@ namespace winrt::G3Companion::implementation
         bool battery = item == BatteryItem();
         bool about = item == AboutItem();
         PageTitle().Text(general ? Localization::Get(Localization::T012) : battery ? Localization::Get(Localization::T013) : about ? Localization::Get(Localization::T014) : Localization::Get(Localization::T015));
-        if(about&&!AboutPage())RootGrid().FindName(L"AboutPage");
-        if(battery&&!BatteryPage()){RootGrid().FindName(L"BatteryPage");CreateUsageChart();RenderUsage();}
         if(item==ButtonsItem()&&m_monitoringConfigured)LoadMacroLibrary();
-        if(AboutPage())AboutPage().Visibility(about ? Visibility::Visible : Visibility::Collapsed);
+        AboutPage().Visibility(about ? Visibility::Visible : Visibility::Collapsed);
         GeneralPage().Visibility(general ? Visibility::Visible : Visibility::Collapsed);
         ButtonsPage().Visibility(item == ButtonsItem() ? Visibility::Visible : Visibility::Collapsed);
-        if(BatteryPage())BatteryPage().Visibility(battery ? Visibility::Visible : Visibility::Collapsed);
+        BatteryPage().Visibility(battery ? Visibility::Visible : Visibility::Collapsed);
         if((battery||about) && m_monitoringConfigured)UpdateMonitoringControls();
         else if(m_usageTimer)m_usageTimer.Stop();
     }

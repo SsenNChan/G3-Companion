@@ -15,3 +15,6 @@
 *.winmd
 *.log
 settings-*.ini
+/batteryhistory/
+/log/
+/Macros/

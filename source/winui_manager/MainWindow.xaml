@@ -315,7 +315,7 @@ SOFTWARE.
                     </StackPanel>
                     </ContentControl>
                 </ScrollViewer>
-                <ScrollViewer x:Name="AboutPage" x:Load="False" Grid.Row="1" Visibility="Collapsed"
+                <ScrollViewer x:Name="AboutPage" Grid.Row="1" Visibility="Collapsed"
                               HorizontalScrollBarVisibility="Disabled" HorizontalScrollMode="Disabled" VerticalScrollBarVisibility="Auto">
                     <StackPanel Padding="28,0,28,24">
                         <Grid ColumnSpacing="16" Margin="0,4,0,28">
@@ -469,7 +469,7 @@ SOFTWARE.
                                    FontSize="12" Foreground="{ThemeResource TextFillColorSecondaryBrush}" TextWrapping="Wrap" TextAlignment="Left" Margin="0,8,0,0"/>
                     </StackPanel>
                 </ScrollViewer>
-                <ScrollViewer x:Name="BatteryPage" x:Load="False" Grid.Row="1" Visibility="Collapsed"
+                <ScrollViewer x:Name="BatteryPage" Grid.Row="1" Visibility="Collapsed"
                               HorizontalScrollBarVisibility="Disabled" HorizontalScrollMode="Disabled" VerticalScrollBarVisibility="Auto">
                     <StackPanel Padding="28,0,28,24">
                         <Border Style="{StaticResource SettingsCardStyle}">
