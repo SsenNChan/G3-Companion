@@ -4,8 +4,6 @@
 #include "clock_compensation.h"
 #include "log_storage.h"
 #include <cstring>
-#include <fstream>
-#include <filesystem>
 
 namespace ClockCalibration {
 inline constexpr std::uint32_t TestDelayMs=10000,TimeoutMs=20000;
@@ -24,8 +22,13 @@ inline bool SaveBackup(std::wstring const& path,Backup const& backup){
     return ok&&MoveFileExW(temporary.c_str(),path.c_str(),MOVEFILE_REPLACE_EXISTING|MOVEFILE_WRITE_THROUGH);
 }
 inline bool LoadBackup(std::wstring const& path,Backup& backup){
-    std::ifstream file(std::filesystem::path(path),std::ios::binary|std::ios::ate);if(!file)return false;const auto length=file.tellg();if(length<0||length>100000)return false;
-    std::vector<std::uint8_t> bytes(static_cast<std::size_t>(length));file.seekg(0);file.read(reinterpret_cast<char*>(bytes.data()),bytes.size());if(!file||bytes.size()<12+520+4096+8||std::memcmp(bytes.data(),"G3CLKR01",8))return false;
+    NativeHandle file(CreateFileW(path.c_str(),GENERIC_READ,FILE_SHARE_READ,nullptr,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,nullptr));
+    if(file.value==INVALID_HANDLE_VALUE)return false;
+    constexpr LONGLONG minimum=12+520+4096+8,maximum=minimum+32768*sizeof(wchar_t);
+    LARGE_INTEGER length{};
+    if(!GetFileSizeEx(file.value,&length)||length.QuadPart<minimum||length.QuadPart>maximum)return false;
+    std::vector<std::uint8_t> bytes(static_cast<std::size_t>(length.QuadPart));DWORD read=0;
+    if(!ReadFile(file.value,bytes.data(),static_cast<DWORD>(bytes.size()),&read,nullptr)||read!=bytes.size()||std::memcmp(bytes.data(),"G3CLKR01",8))return false;
     std::uint32_t characters=0;std::memcpy(&characters,bytes.data()+8,4);if(characters>32768||bytes.size()!=12+characters*sizeof(wchar_t)+520+4096+8)return false;
     std::uint64_t hash=0;std::memcpy(&hash,bytes.data()+bytes.size()-8,8);if(hash!=Hash(bytes,bytes.size()-8))return false;
     Backup decoded;decoded.devicePath.resize(characters);std::memcpy(decoded.devicePath.data(),bytes.data()+12,characters*sizeof(wchar_t));auto offset=12+characters*sizeof(wchar_t);

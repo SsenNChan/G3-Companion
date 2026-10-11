@@ -36,10 +36,20 @@ template<class Accept> inline DWORD ReadLinesFrom(HANDLE file,ULONGLONG& offset,
     for(;;){
         if(canceled&&canceled->load())return ERROR_OPERATION_ABORTED;
         DWORD count=0;if(!ReadFile(file,buffer,sizeof(buffer),&count,nullptr))return GetLastError();if(!count)return 0;
-        for(DWORD i=0;i<count;++i){++position;
-            if(buffer[i]=='\n'){if(!oversized)accept(std::string_view(line));offset=position;line.clear();oversized=false;}
-            else if(!oversized){if(line.size()<4096)line.push_back(buffer[i]);else{line.clear();oversized=true;}}
+        const std::string_view chunk(buffer,count);
+        std::size_t begin=0;
+        while(begin<chunk.size()){
+            const auto end=chunk.find('\n',begin);
+            const auto part=chunk.substr(begin,(end==chunk.npos?chunk.size():end)-begin);
+            if(!oversized){
+                if(part.size()>4096-line.size()){line.clear();oversized=true;}
+                else if(end!=chunk.npos&&line.empty())accept(part);
+                else{line.append(part);if(end!=chunk.npos)accept(std::string_view(line));}
+            }
+            if(end==chunk.npos)break;
+            offset=position+end+1;line.clear();oversized=false;begin=end+1;
         }
+        position+=count;
     }
 }
 template<class Accept> inline DWORD ReadLines(const std::wstring& path,Accept accept){
