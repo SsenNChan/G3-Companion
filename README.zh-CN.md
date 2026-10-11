@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/Windows-x64-0078D4" alt="Windows x64">
   <img src="https://img.shields.io/badge/UI-WinUI%203-356585" alt="WinUI 3">
   <img src="https://img.shields.io/badge/Languages-English%20%2F%20Chinese-356585" alt="中文与英文">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-356585" alt="GNU GPL v3.0"></a>
 </p>
 
 <p align="center">
@@ -122,6 +123,10 @@
 ```
 
 [构建脚本](source/build.cmd)生成语言资源，下载 [packages.config](source/winui_manager/packages.config) 中的 NuGet 依赖，构建 Release x64，并将可执行文件与配套文件复制到仓库根目录。编译产物与依赖存放在 `.build`。
+
+## 许可证
+
+本项目采用 [GNU General Public License v3.0](LICENSE)（`GPL-3.0-only`）。应用图标中的第三方素材沿用 [第三方许可声明](THIRD_PARTY_NOTICES.md) 中的 MIT 许可证。
 
 ## 反馈
 

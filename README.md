@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/Windows-x64-0078D4" alt="Windows x64">
   <img src="https://img.shields.io/badge/UI-WinUI%203-356585" alt="WinUI 3">
   <img src="https://img.shields.io/badge/Languages-English%20%2F%20Chinese-356585" alt="English and Chinese">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-356585" alt="GNU GPL v3.0"></a>
 </p>
 
 <p align="center">
@@ -122,6 +123,10 @@ Run this command in PowerShell from the repository root:
 ```
 
 The [build script](source/build.cmd) generates localization resources, restores the NuGet packages listed in [packages.config](source/winui_manager/packages.config), and builds Release x64. It copies the executable and companion files to the repository root; build output and dependencies are stored in `.build`.
+
+## License
+
+This project is licensed under the [GNU General Public License v3.0](LICENSE) (`GPL-3.0-only`). The application icon's third-party assets retain the MIT license documented in [Third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Feedback
 
