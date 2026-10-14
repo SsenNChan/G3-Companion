@@ -14,7 +14,6 @@
 #include <windows.h>
 #include <shellapi.h>
 #include <shlobj.h>
-#include <setupapi.h>
 #include <hidsdi.h>
 #include <hidpi.h>
 #include <dbt.h>
@@ -383,6 +382,7 @@ void DrawLabel(const std::wstring& value,IDWriteTextFormat* format,float left,fl
 }
 void Paint(){
     PAINTSTRUCT ps;BeginPaint(window,&ps);
+    if(!IsWindowVisible(window)){EndPaint(window,&ps);return;}
     if(SUCCEEDED(Resources())){
         Palette palette=Colors();renderTarget->BeginDraw();renderTarget->Clear(systemBackdrop?D2D1::ColorF(0,0,0,0):palette.background);
         if(systemBackdrop){colorBrush->SetColor(dark?D2D1::ColorF(0.035f,0.035f,0.045f,0.58f):D2D1::ColorF(0.97f,0.97f,0.98f,0.72f));renderTarget->FillRectangle(D2D1::RectF(0,0,PanelWidth,PanelHeight),colorBrush.Get());}

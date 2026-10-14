@@ -65,6 +65,16 @@ namespace
         std::swprintf(text,ARRAYSIZE(text),L"%.0f%%",value);
         return text;
     }
+    bool SameUsage(BatteryUsage::Report const& left,BatteryUsage::Report const& right)
+    {
+        if(left.error!=right.error || left.average!=right.average || left.averageDays!=right.averageDays)return false;
+        for(size_t index=0;index<BatteryUsage::DisplayDays;++index){
+            auto const& a=left.days[index];auto const& b=right.days[index];
+            if(a.date.wYear!=b.date.wYear || a.date.wMonth!=b.date.wMonth || a.date.wDay!=b.date.wDay ||
+                a.hasReading!=b.hasReading || a.consumed!=b.consumed)return false;
+        }
+        return true;
+    }
     bool ReadNumber(NumberBox const& box, int& value)
     {
         std::wstring text(box.Text().c_str());
@@ -183,6 +193,10 @@ namespace winrt::G3Companion::implementation
     {
         auto self=reinterpret_cast<MainWindow*>(reference);
         if(message==WM_INPUT)self->HandleClockInput(lparam);
+        if(message==WM_SIZE){
+            const bool minimized=wparam==SIZE_MINIMIZED;
+            if(self->m_minimized!=minimized){self->m_minimized=minimized;self->UpdateUsageTimer();}
+        }
         if(message==WM_ERASEBKGND && self->m_dwmBackdropEnabled){
             // WinUI's default erase fills the HWND with an opaque theme color.
             // Zero RGB/alpha keeps the extended DWM frame visible beneath XAML.
@@ -448,7 +462,16 @@ namespace winrt::G3Companion::implementation
         TestNotificationButton().IsEnabled(state.enabled);
         MonitoringOptions().Visibility(state.enabled?Visibility::Visible:Visibility::Collapsed);
         m_monitoringPopulating=false;
-        if(state.enabled && BatteryPage().Visibility()==Visibility::Visible){
+        UpdateUsageTimer();
+    }
+    bool MainWindow::CanRefreshUsage()
+    {
+        return !m_closed && !m_minimized && m_monitoringConfigured && BatteryPage() &&
+            BatteryPage().Visibility()==Visibility::Visible && MonitoringToggle().IsOn();
+    }
+    void MainWindow::UpdateUsageTimer()
+    {
+        if(CanRefreshUsage()){
             if(m_usageTimer && !m_usageTimer.IsRunning())m_usageTimer.Start();
             RefreshUsage();
         }else if(m_usageTimer)m_usageTimer.Stop();
@@ -473,7 +496,7 @@ namespace winrt::G3Companion::implementation
     }
     void MainWindow::RenderUsage()
     {
-        if(!BatteryPage())return;
+        if(!BatteryPage() || m_minimized)return;
         const auto& today=m_usage.days.back();bool ok=m_usage.error==ERROR_SUCCESS;
         UsageAverageValue().Text(ok && m_usage.averageDays?UsagePercent(m_usage.average):L"--");
         UsageTodayValue().Text(ok && today.hasReading?UsagePercent(today.consumed):L"--");
@@ -507,7 +530,7 @@ namespace winrt::G3Companion::implementation
     }
     void MainWindow::RefreshUsage()
     {
-        if(m_closed || !m_monitoringConfigured || !BatteryPage() || BatteryPage().Visibility()!=Visibility::Visible || !MonitoringToggle().IsOn())return;
+        if(!CanRefreshUsage())return;
         if(m_usageLoading){m_usageReloadRequested=true;return;}
         m_usageLoading=true;
         auto queue=DispatcherQueue();auto weak=get_weak();auto logs=m_monitoringPaths.directory+L"\\batteryhistory";auto reader=m_usageReader;
@@ -518,7 +541,8 @@ namespace winrt::G3Companion::implementation
                 catch(...){SYSTEMTIME today{};GetLocalTime(&today);usage=BatteryUsage::Empty(today);usage.error=ERROR_READ_FAULT;}
                 queue.TryEnqueue([weak,usage]{
                     if(auto self=weak.get();self && !self->m_closed){
-                        self->m_usageLoading=false;self->m_usage=usage;self->RenderUsage();
+                        self->m_usageLoading=false;
+                        if(self->CanRefreshUsage() && !SameUsage(self->m_usage,usage)){self->m_usage=usage;self->RenderUsage();}
                         if(self->m_usageReloadRequested){self->m_usageReloadRequested=false;self->RefreshUsage();}
                     }
                 });

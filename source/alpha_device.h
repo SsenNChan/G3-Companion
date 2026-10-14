@@ -1,11 +1,16 @@
 #pragma once
 #include <atomic>
 #include <new>
+#include <cwchar>
+#include <vector>
 #include "alpha_state.h"
 #include "history.h"
 #include "program_log.h"
 #include "native_handle.h"
 #include <dbt.h>
+#include <cfgmgr32.h>
+#include <winioctl.h>
+#include <hidclass.h>
 
 namespace Device {
 using MouseState::Mode;
@@ -70,49 +75,71 @@ inline bool IsTargetDeviceChange(WPARAM event,LPARAM data){
 }
 inline bool Enumerate(std::wstring& receiver,std::wstring& wired,DWORD& error){
     GUID guid;HidD_GetHidGuid(&guid);
-    HDEVINFO list=SetupDiGetClassDevsW(&guid,nullptr,nullptr,DIGCF_PRESENT|DIGCF_DEVICEINTERFACE);
-    if(list==INVALID_HANDLE_VALUE){error=GetLastError();return false;}
-    struct Guard{HDEVINFO list;~Guard(){SetupDiDestroyDeviceInfoList(list);}} guard{list};
-    std::unique_ptr<BYTE[]> buffer;DWORD capacity=0;
-    for(DWORD i=0;;++i){
-        SP_DEVICE_INTERFACE_DATA item{sizeof(item)};
-        if(!SetupDiEnumDeviceInterfaces(list,nullptr,&guid,i,&item)){
-            error=GetLastError();if(error==ERROR_NO_MORE_ITEMS){error=0;return true;}return false;
-        }
-        DWORD size=0;SetupDiGetDeviceInterfaceDetailW(list,&item,nullptr,0,&size,nullptr);if(!size)continue;
-        if(size>capacity){buffer=std::make_unique<BYTE[]>(size);capacity=size;}
-        auto detail=reinterpret_cast<SP_DEVICE_INTERFACE_DETAIL_DATA_W*>(buffer.get());detail->cbSize=sizeof(*detail);
-        if(!SetupDiGetDeviceInterfaceDetailW(list,&item,detail,size,nullptr,nullptr))continue;
-        if(!IsTargetDevicePath(detail->DevicePath))continue;
-        Handle probe(CreateFileW(detail->DevicePath,0,FILE_SHARE_READ|FILE_SHARE_WRITE,nullptr,OPEN_EXISTING,0,nullptr));
+    std::vector<wchar_t> paths;
+    CONFIGRET code;
+    do{
+        ULONG size=0;
+        code=CM_Get_Device_Interface_List_SizeW(&size,&guid,nullptr,CM_GET_DEVICE_INTERFACE_LIST_PRESENT);
+        if(code!=CR_SUCCESS){error=CM_MapCrToWin32Err(code,ERROR_GEN_FAILURE);return false;}
+        paths.resize(size);
+        code=CM_Get_Device_Interface_ListW(&guid,nullptr,paths.data(),size,CM_GET_DEVICE_INTERFACE_LIST_PRESENT);
+    }while(code==CR_BUFFER_SMALL);
+    if(code!=CR_SUCCESS){error=CM_MapCrToWin32Err(code,ERROR_GEN_FAILURE);return false;}
+    for(const wchar_t* path=paths.data();*path;path+=wcslen(path)+1){
+        if(!IsTargetDevicePath(path))continue;
+        Handle probe(CreateFileW(path,0,FILE_SHARE_READ|FILE_SHARE_WRITE,nullptr,OPEN_EXISTING,0,nullptr));
         if(probe.value==INVALID_HANDLE_VALUE){error=GetLastError();return false;}
         HIDD_ATTRIBUTES attributes{sizeof(attributes)};HIDP_CAPS caps{};PHIDP_PREPARSED_DATA data=nullptr;
         if(!HidD_GetAttributes(probe.value,&attributes)||!HidD_GetPreparsedData(probe.value,&data))continue;
-        auto code=HidP_GetCaps(data,&caps);HidD_FreePreparsedData(data);
-        if(code!=HIDP_STATUS_SUCCESS||attributes.VendorID!=0x258a||caps.UsagePage!=0xff02||caps.Usage!=2||caps.FeatureReportByteLength!=520||caps.InputReportByteLength!=8)continue;
-        if(attributes.ProductID==0x0136&&wired.empty())wired=detail->DevicePath;
-        if(attributes.ProductID==0x0138&&receiver.empty())receiver=detail->DevicePath;
+        auto status=HidP_GetCaps(data,&caps);HidD_FreePreparsedData(data);
+        if(status!=HIDP_STATUS_SUCCESS||attributes.VendorID!=0x258a||caps.UsagePage!=0xff02||caps.Usage!=2||caps.FeatureReportByteLength!=520||caps.InputReportByteLength!=8)continue;
+        if(attributes.ProductID==0x0136&&wired.empty())wired=path;
+        if(attributes.ProductID==0x0138&&receiver.empty())receiver=path;
     }
+    error=0;return true;
 }
-inline bool Query(HANDLE device,const std::array<BYTE,8>& header,BYTE& value,DWORD& error){
+inline bool Query(HANDLE device,HANDLE queryEvent,const std::array<BYTE,8>& header,BYTE& value,DWORD& error){
     const auto started=GetTickCount64();
     struct QueryLog {
         const std::array<BYTE,8>& header;DWORD& error;ULONGLONG started;
         ~QueryLog(){if(ProgramLog::Enabled())ProgramLog::Write(header[1]==12?"battery_query_completed":"connection_query_completed","duration_ms="+std::to_string(GetTickCount64()-started),error);}
     } queryLog{header,error,started};
+    const auto deadline=started+2000;
+    auto stopped=[&](){if(WaitForSingleObject(stop,0)!=WAIT_OBJECT_0)return false;error=ERROR_OPERATION_ABORTED;return true;};
     std::array<BYTE,520> bytes{};std::copy(header.begin(),header.end(),bytes.begin());
-    if(!HidD_SetFeature(device,bytes.data(),static_cast<ULONG>(bytes.size()))){error=GetLastError();return false;}
-    if(WaitForSingleObject(stop,10)==WAIT_OBJECT_0){error=ERROR_OPERATION_ABORTED;return false;}
-    bytes.fill(0);bytes[0]=9;Handle event(CreateEventW(nullptr,TRUE,FALSE,nullptr));
-    if(!event.value){error=GetLastError();return false;}
-    OVERLAPPED overlapped{};overlapped.hEvent=event.value;DWORD received=0;
-    BOOL ok=DeviceIoControl(device,0x000b0192,bytes.data(),static_cast<DWORD>(bytes.size()),bytes.data(),static_cast<DWORD>(bytes.size()),&received,&overlapped);
-    if(!ok){error=GetLastError();if(error!=ERROR_IO_PENDING)return false;
-        HANDLE waits[]={stop,event.value};DWORD wait=WaitForMultipleObjects(2,waits,FALSE,2000);
-        if(wait!=WAIT_OBJECT_0+1){const DWORD waitError=wait==WAIT_FAILED?GetLastError():0;CancelIoEx(device,&overlapped);GetOverlappedResult(device,&overlapped,&received,TRUE);error=wait==WAIT_OBJECT_0?ERROR_OPERATION_ABORTED:wait==WAIT_FAILED?waitError:ERROR_TIMEOUT;return false;}
-        if(!GetOverlappedResult(device,&overlapped,&received,FALSE)){error=GetLastError();return false;}
-    }
+    DWORD received=0;
+    auto transfer=[&](DWORD control,bool read){
+        if(stopped())return false;
+        auto now=GetTickCount64();if(now>=deadline){error=ERROR_TIMEOUT;return false;}
+        ResetEvent(queryEvent);
+        OVERLAPPED overlapped{};overlapped.hEvent=queryEvent;
+        BOOL ok=DeviceIoControl(device,control,bytes.data(),static_cast<DWORD>(bytes.size()),
+            read?bytes.data():nullptr,read?static_cast<DWORD>(bytes.size()):0,&received,&overlapped);
+        if(!ok){
+            error=GetLastError();if(error!=ERROR_IO_PENDING){stopped();return false;}
+            now=GetTickCount64();
+            HANDLE waits[]={stop,queryEvent};
+            const DWORD wait=WaitForMultipleObjects(2,waits,FALSE,static_cast<DWORD>(now>=deadline?0:deadline-now));
+            if(wait!=WAIT_OBJECT_0+1){
+                const DWORD waitError=wait==WAIT_FAILED?GetLastError():ERROR_TIMEOUT;
+                CancelIoEx(device,&overlapped);
+                // The report and OVERLAPPED remain alive until the driver completes cancellation.
+                GetOverlappedResult(device,&overlapped,&received,TRUE);
+                error=wait==WAIT_OBJECT_0?ERROR_OPERATION_ABORTED:waitError;stopped();return false;
+            }
+            ok=GetOverlappedResult(device,&overlapped,&received,FALSE);
+            if(!ok)error=GetLastError();
+        }
+        if(stopped())return false;
+        return ok!=FALSE;
+    };
+    if(!transfer(IOCTL_HID_SET_FEATURE,false))return false;
+    const DWORD wait=WaitForSingleObject(stop,10);
+    if(wait!=WAIT_TIMEOUT){error=wait==WAIT_OBJECT_0?ERROR_OPERATION_ABORTED:GetLastError();return false;}
+    bytes.fill(0);bytes[0]=9;
+    if(!transfer(IOCTL_HID_GET_FEATURE,true))return false;
     if(!MouseState::QueryReply(bytes.data(),received,header.data())){error=ERROR_INVALID_DATA;return false;}
+    if(stopped())return false;
     value=bytes[8];error=0;return true;
 }
 inline void Publish(Result result){
@@ -133,6 +160,8 @@ inline DWORD RunSession(){
     recorder.Reset(logDirectory,initial);
     Result result=initial;Handle device,inputEvent(CreateEventW(nullptr,TRUE,FALSE,nullptr));
     if(!inputEvent.value){result.state=Mode::Error;result.error=GetLastError();Publish(result);return 1;}
+    Handle queryEvent(CreateEventW(nullptr,TRUE,FALSE,nullptr));
+    if(!queryEvent.value){result.state=Mode::Error;result.error=GetLastError();Publish(result);return 1;}
     OVERLAPPED input{};input.hEvent=inputEvent.value;std::array<BYTE,8> bytes{};bool pending=false;
     MouseState::BatteryReportWait batteryWait;
     unsigned connectionGeneration=generation.load();
@@ -180,13 +209,13 @@ inline DWORD RunSession(){
                 if(!reuse)device.reset(CreateFileW(receiver.c_str(),GENERIC_READ|GENERIC_WRITE,FILE_SHARE_READ|FILE_SHARE_WRITE,nullptr,OPEN_EXISTING,FILE_FLAG_OVERLAPPED,nullptr));
                 BYTE connection=0,battery=0;
                 if(device.value==INVALID_HANDLE_VALUE){result.state=Mode::Error;result.error=GetLastError();}
-                else if(!Query(device.value,{9,9,7,0,1,0,1,0},connection,result.error))result.state=Mode::Error;
+                else if(!Query(device.value,queryEvent.value,{9,9,7,0,1,0,1,0},connection,result.error))result.state=Mode::Error;
                 else if(connection==0){batteryWait.Reset();result.state=Mode::Offline;}
                 else if(connection!=1){result.state=Mode::Error;result.error=ERROR_INVALID_DATA;}
                 else{
                     batteryWait.ConfirmOnline();
                     if(!batteryWait.Waiting()){
-                        if(!Query(device.value,{9,12,9,1,1,0,1,0},battery,result.error))result.state=Mode::Error;
+                        if(!Query(device.value,queryEvent.value,{9,12,9,1,1,0,1,0},battery,result.error))result.state=Mode::Error;
                         else SetBattery(result,battery);
                     }
                 }

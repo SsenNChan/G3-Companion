@@ -141,7 +141,7 @@ namespace winrt::G3Companion::implementation
         bool m_monitoringConfigured=false,m_monitoringPopulating=false;
         BatteryUsage::Report m_usage;
         std::shared_ptr<BatteryUsage::Reader> m_usageReader=std::make_shared<BatteryUsage::Reader>();
-        bool m_usageLoading=false,m_usageReloadRequested=false;
+        bool m_usageLoading=false,m_usageReloadRequested=false,m_minimized=false;
         std::array<Microsoft::UI::Xaml::Controls::Border,BatteryUsage::DisplayDays> m_usageBars;
         std::array<Microsoft::UI::Xaml::Controls::TextBlock,BatteryUsage::DisplayDays> m_usageDates;
         Microsoft::UI::Dispatching::DispatcherQueueTimer m_usageTimer{nullptr};
@@ -249,6 +249,8 @@ namespace winrt::G3Companion::implementation
         void UpdateMonitoringControls();
         void CreateUsageChart();
         void RefreshUsage();
+        bool CanRefreshUsage();
+        void UpdateUsageTimer();
         void RenderUsage();
         void SetStatusMessage(winrt::hstring const& text);
         void AnimateStatus();
